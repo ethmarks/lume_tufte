@@ -28,8 +28,6 @@ export default function (userOptions?: Options) {
       .use(basePath())
       .use(metas())
       .use(sitemap(options.sitemap))
-      .use(favicon(options.favicon))
-      .add("uploads")
-      .add("style.css");
+      .use(favicon(options.favicon));
   };
 }

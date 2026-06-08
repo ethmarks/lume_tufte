@@ -7,4 +7,7 @@ const site = lume({
 
 site.use(plugins());
 
+site.add("uploads", "");
+site.add("style.css");
+
 export default site;
