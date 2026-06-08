@@ -1,5 +1,5 @@
-@import "css/reset.css";
-@import "css/tufte.css";
+@forward "css/reset.css";
+@forward "css/tufte.css";
 
 body {
     max-inline-size: 60ch;
