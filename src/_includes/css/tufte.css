@@ -10,19 +10,20 @@ body {
     font-family:
         et-book, Palatino, "Palatino Linotype", "Palatino LT STD",
         "Book Antiqua", Georgia, serif;
-    background-color: #fffff8;
-    color: #111;
+    background-color: #151515;
+    color: #ddd;
     max-width: 1400px;
     counter-reset: sidenote-counter;
 }
 
-/* Adds dark mode */
-@media (prefers-color-scheme: dark) {
+/*
+@media (prefers-color-scheme: light) {
     body {
-        background-color: #151515;
-        color: #ddd;
+        background-color: #fffff8;
+        color: #111;
     }
 }
+*/
 
 h1 {
     font-weight: 400;
