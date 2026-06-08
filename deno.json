@@ -1,8 +1,8 @@
 {
   "imports": {
-    "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.1.0/",
-    "lume/cms/": "https://cdn.jsdelivr.net/gh/lumeland/cms@0.13.0/",
-    "lume/jsx-runtime": "https://cdn.jsdelivr.net/gh/oscarotero/ssx@0.1.12/jsx-runtime.ts"
+    "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.2.6/",
+    "lume/cms/": "https://cdn.jsdelivr.net/gh/lumeland/cms@0.15.5/",
+    "lume/jsx-runtime": "https://cdn.jsdelivr.net/gh/oscarotero/ssx@0.1.15/jsx-runtime.ts"
   },
   "lock": false,
   "tasks": {
@@ -21,6 +21,10 @@
     "changelog": {
       "description": "Run the changelog utility to format the CHANGELOG.md file",
       "command": "deno run --allow-read --allow-write https://deno.land/x/changelog@v2.6.2/bin.ts"
+    },
+    "new": {
+      "description": "Create new content or code using artifacts",
+      "command": "deno task lume new"
     }
   },
   "compilerOptions": {
@@ -65,12 +69,18 @@
   },
   "lint": {
     "plugins": [
-      "https://cdn.jsdelivr.net/gh/lumeland/lume@3.1.0/lint.ts"
+      "https://cdn.jsdelivr.net/gh/lumeland/lume@3.2.6/lint.ts"
     ],
     "rules": {
       "exclude": [
         "no-import-prefix"
       ]
     }
+  },
+  "allowScripts": {
+    "deny": [
+      "npm:sharp",
+      "npm:@parcel/watcher"
+    ]
   }
 }
