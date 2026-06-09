@@ -7,3 +7,16 @@ metas:
   icon: /uploads/favicon.svg
   lang: =lang
   generator: true
+
+headerItems:
+  - title: Home
+    url: /
+
+  - title: About
+    url: /about
+
+  - title: Blog
+    url: /blog
+
+  - title: GitHub
+    url: github.com/ethmarks/lume_tufte

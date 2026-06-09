@@ -1,0 +1,8 @@
+<header>
+  <span class="title">{{ metas.site }}</span>
+  <nav>
+    {{ for item of headerItems }}
+      <a href="{{item.url}}">{{ item.title }}</a>
+    {{ /for }}
+  </nav>
+</header>

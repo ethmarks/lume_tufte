@@ -1,0 +1,37 @@
+header {
+    width: 55%;
+    margin-top: 1rem;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    gap: 2rem;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .title {
+        font-style: italic;
+        font-size: 1.7rem;
+        flex-shrink: 0;
+    }
+
+    nav {
+        display: flex;
+        column-gap: 0.6rem;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 760px) {
+    header {
+        width: 100%;
+    }
+}

@@ -3,13 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ title || metas.title }} - {{ metas.site }}</title>
+    <title>
+      {{ url === "/" ? "" : title || metas.title }}{{ metas.site }}
+    </title>
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="/style.css">
     <link rel="canonical" href="{{ url |> url(true) }}">
   </head>
   <body>
     <main>
+      {{ comp.header() }}
       {{ content }}
     </main>
   </body>
