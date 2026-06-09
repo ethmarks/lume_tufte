@@ -4,15 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-      {{ url === "/" ? "" : title || metas.title }}{{ metas.site }}
+      {{ if url !== "/" }}
+        {{ title || metas.title }} -
+      {{ /if }}
+      {{ metas.site }}
     </title>
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="/style.css">
     <link rel="canonical" href="{{ url |> url(true) }}">
+    {{ if css }}
+      {{ `<style>${css}</style>` }}
+    {{ /if }}
   </head>
   <body>
     <main>
-      {{ comp.header() }}
+      {{ if header.enabled }}{{ comp.header() }}{{ /if }}
+
       {{ content }}
     </main>
   </body>

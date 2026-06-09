@@ -8,15 +8,17 @@ metas:
   lang: =lang
   generator: true
 
-headerItems:
-  - title: Home
-    url: /
+header:
+  enabled: true
+  items:
+    - title: Home
+      url: /
 
-  - title: About
-    url: /about
+    - title: About
+      url: /about
 
-  - title: Blog
-    url: /blog
+    - title: Blog
+      url: /blog
 
-  - title: GitHub
-    url: github.com/ethmarks/lume_tufte
+    - title: GitHub
+      url: github.com/ethmarks/lume_tufte
