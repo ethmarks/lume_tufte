@@ -27,6 +27,19 @@ header {
         display: flex;
         column-gap: 0.6rem;
         flex-wrap: wrap;
+
+        a {
+            transition: text-underline-offset 0.3s ease;
+
+            &:hover,
+            &.active {
+                text-underline-offset: 5px;
+            }
+        }
+
+        &:hover a.active:not(:hover) {
+            text-underline-offset: 2.1px;
+        }
     }
 }
 

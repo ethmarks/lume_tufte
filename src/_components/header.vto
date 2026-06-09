@@ -1,8 +1,26 @@
 <header>
   <span class="title">{{ metas.site }}</span>
   <nav>
+    {{>
+      function isUrlActive(pageUrl, itemUrl) {
+        if (!itemUrl.startsWith("/")) return false;
+
+        if (itemUrl === "/") {
+          return pageUrl === "/";
+        } else {
+          return pageUrl.startsWith(itemUrl);
+        }
+      }
+    }}
     {{ for item of header.items }}
-      <a href="{{item.url}}">{{ item.title }}</a>
+      <a
+        href="{{item.url}}"
+        {{ if header.highlightActive && isUrlActive(pageUrl, item.url) }}
+          class="active"
+        {{ /if }}
+      >
+        {{ item.title }}
+      </a>
     {{ /for }}
   </nav>
 </header>

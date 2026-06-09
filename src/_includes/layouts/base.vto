@@ -18,7 +18,7 @@
   </head>
   <body>
     <main>
-      {{ if header.enabled }}{{ comp.header() }}{{ /if }}
+      {{ if header.enabled }}{{ comp.header({ pageUrl: url }) }}{{ /if }}
 
       {{ content }}
     </main>

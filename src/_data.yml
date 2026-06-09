@@ -9,7 +9,21 @@ metas:
   generator: true
 
 header:
+  # Whether to render the header.
+  #
+  # You can change this globally in _data.yml, but remember that you can
+  # change it on a per-page basis via the frontmatter.
   enabled: true
+
+  # Whether to highlight the currently active section in the nav.
+  #
+  # With the default header styles, this is rendered by lowering the text
+  # underline.
+  highlightActive: true
+
+  # The nav items.
+  #
+  # Remember to prefix links to within your site with a forward slash (/).
   items:
     - title: Home
       url: /
