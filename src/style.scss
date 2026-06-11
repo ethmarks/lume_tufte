@@ -5,3 +5,7 @@
 @forward "css/blog-list.scss";
 @forward "css/blog-single.scss";
 @forward "css/details";
+
+.katex-display {
+    overflow-x: scroll;
+}

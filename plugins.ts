@@ -24,6 +24,7 @@ import {
 } from "lume/plugins/markdown.ts";
 import anchorPlugin from "npm:markdown-it-anchor@^9.2.0";
 import collapsiblePlugin from "npm:markdown-it-collapsible@^2.0.2";
+import { smartMediaPlugin } from "jsr:@ethmarks/markdown-it-smart-media@^1.2.0";
 import tufteSectionsPlugin from "./mdit/tufte-sections.ts";
 import tufteNotesPlugin from "./mdit/tufte-notes.ts";
 
@@ -47,6 +48,7 @@ export const defaults: Options = {
     plugins: [
       anchorPlugin,
       collapsiblePlugin,
+      smartMediaPlugin,
       tufteSectionsPlugin,
       tufteNotesPlugin,
     ],
@@ -73,6 +75,7 @@ export default function (userOptions?: Options) {
     // Adds
     site.add("style.scss");
     site.add("assets/fonts");
+    site.add("uploads");
 
     // Plugins
     site.use(katex(options.katex));
