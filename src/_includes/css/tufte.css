@@ -97,6 +97,14 @@ article {
     padding: 5rem 0rem;
 }
 
+/*
+5rem by default, minus 1rem for the header's top padding and minus 1.7rem for
+the header font size.
+*/
+header + article {
+    padding-top: calc(5rem - 1rem - 1.7rem);
+}
+
 section {
     padding-top: 1rem;
     padding-bottom: 1rem;
