@@ -275,12 +275,25 @@ div.table-wrapper {
     letter-spacing: 0.03em;
 }
 
-code,
-pre > code {
+pre {
+    border-radius: 0.5rem;
+    overflow-x: scroll;
+}
+
+code {
     font-family: var(--font-mono);
-    font-size: 1rem;
-    line-height: 1.42;
-    -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
+    font-size: 0.9rem;
+}
+
+p > code {
+    background: var(--glow-bg-color, #111729);
+    padding: 0.2rem 0.3rem;
+    border-radius: 0.5rem;
+}
+
+[glow] ins::before,
+[glow] del::before {
+    content: "" !important;
 }
 
 .sans > code {
