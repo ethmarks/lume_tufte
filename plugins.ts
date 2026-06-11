@@ -40,7 +40,7 @@ export interface Options {
 
 export const defaults: Options = {
   favicon: {
-    input: "assets/favicon.svg",
+    input: "uploads/favicon.svg",
   },
   markdown: {
     plugins: [

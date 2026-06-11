@@ -4,9 +4,10 @@ metas:
   site: Lume site
   twitter: ""
   fediverse: ""
+  generator: true
+  robots: true
   icon: /uploads/favicon.svg
   lang: =lang
-  generator: true
 
 header:
   # Whether to render the header.

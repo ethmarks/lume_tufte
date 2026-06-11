@@ -4,20 +4,84 @@ const cms = CMS();
 
 cms.document({
   name: "Site settings",
-  description: "Default settings for the site",
+  description: "Settings for the site",
   store: "src:_data.yml",
   fields: [
-    "lang: text",
+    {
+      name: "lang",
+      type: "text",
+      description:
+        'The language code representing the language of the site. For example, "en" represents English. See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang">this MDN page</a> for more information.',
+    },
     {
       name: "metas",
+      label: "Metas",
+      description:
+        'Settings for the <a href="https://lume.land/plugins/metas/">Metas plugin</a>',
       type: "object",
       fields: [
-        "site: text",
-        "twitter: text",
-        "fediverse: text",
-        "icon: file",
+        {
+          name: "site",
+          type: "text",
+          description: "The name of the site,",
+        },
+        {
+          name: "twitter",
+          type: "text",
+          description: "The twitter username,",
+        },
+        {
+          name: "fediverse",
+          type: "text",
+          description: "The fediverse username (for author attribution).",
+        },
+        {
+          name: "generator",
+          type: "checkbox",
+          description:
+            'Whether to list "Lume" in a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name#generator">generator meta tag</a>.',
+        },
+        {
+          name: "robots",
+          type: "checkbox",
+          description:
+            'Whether to tell web crawlers to crawl your site. See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/robots">this MDN page</a> for more information.',
+        },
+        {
+          name: "icon",
+          type: "file",
+          description: "The icon of the site.",
+        },
         "lang: hidden",
-        "generator: checkbox",
+      ],
+    },
+    {
+      name: "header",
+      label: "Header",
+      description: "Settings for the site header",
+      type: "object",
+      fields: [
+        {
+          name: "enabled",
+          type: "checkbox",
+          description: "Whether to render the header.",
+        },
+        {
+          name: "highlightActive",
+          type: "checkbox",
+          description:
+            "Whether to highlight the currently active section in the nav. With the default header styles, this is rendered by lowering the text underline.",
+        },
+        {
+          name: "items",
+          type: "object-list",
+          description:
+            "The nav items. Remember to prefix links to within your site with a forward slash (/).",
+          fields: [
+            "title: text",
+            "url: text",
+          ],
+        },
       ],
     },
   ],
@@ -26,13 +90,76 @@ cms.document({
 cms.document({
   name: "Homepage",
   description: "Main page of the site",
-  store: "src:index.vto",
+  store: "src:index.md",
   fields: [
-    "layout: hidden",
-    "title: text",
-    "content: code",
+    {
+      name: "layout",
+      type: "hidden",
+      value: "layouts/home.vto",
+    },
+    {
+      name: "title",
+      label: "Title",
+      type: "text",
+    },
+    {
+      name: "content",
+      label: "Content",
+      type: "markdown",
+    },
   ],
 });
+
+cms.document({
+  name: "Blog Index",
+  description: "Page listing all blog posts",
+  store: "src:blog.md",
+  fields: [
+    {
+      name: "layout",
+      type: "hidden",
+      value: "layouts/blog-index.vto",
+    },
+    {
+      name: "title",
+      label: "Title",
+      type: "text",
+    },
+    {
+      name: "content",
+      label: "Content",
+      type: "markdown",
+    },
+  ],
+});
+
+cms.collection("blog", "src:blog/*.md", [
+  {
+    name: "layout",
+    type: "hidden",
+    value: "layouts/blog-single.vto",
+  },
+  {
+    name: "title",
+    label: "Title",
+    type: "text",
+  },
+  {
+    name: "author",
+    type: "text",
+    label: "Author",
+  },
+  {
+    name: "published",
+    type: "date",
+    label: "Publish Date",
+  },
+  {
+    name: "content",
+    label: "Content",
+    type: "markdown",
+  },
+]);
 
 cms.upload("uploads: Uploaded files", "src:uploads");
 
