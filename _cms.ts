@@ -2,6 +2,53 @@ import CMS from "lume/cms/mod.ts";
 
 const cms = CMS();
 
+const BLOGLIST_FIELD: Lume.CMS.Field = {
+  name: "blogList",
+  label: "Blog List",
+  description:
+    'The settings for the blogList component, which is inserted at the placeholder "/BLOGLIST/" in the content.',
+  type: "object",
+  fields: [
+    {
+      name: "filter",
+      type: "hidden",
+      value: "layout=layouts/blog-single.vto",
+    },
+    {
+      name: "order",
+      label: "Order",
+      type: "text",
+      description:
+        `How the posts should be sorted. See the <a href="https://lume.land/plugins/search/#sort-the-results">"Sort the results" section</a> of Lume's Search plugin docs for more information.`,
+    },
+    {
+      name: "limit",
+      label: "Limit",
+      type: "number",
+      description:
+        `How many posts to display. To display all posts, enter "0". See the <a href="https://lume.land/plugins/search/#limit-the-results">"Limit the results" section</a> of Lume's Search plugin docs for more information.`,
+    },
+    {
+      name: "showAuthor",
+      label: "Show Author",
+      type: "checkbox",
+      description: `Whether to display the author of each post.`,
+    },
+    {
+      name: "showDate",
+      label: "Show Date",
+      type: "checkbox",
+      description: `Whether to display the publication date of each post.`,
+    },
+    {
+      name: "showMins",
+      label: "Show Reading Time",
+      type: "checkbox",
+      description: `Whether to display the time to read of each post.`,
+    },
+  ],
+};
+
 cms.document({
   name: "Site settings",
   description: "Settings for the site",
@@ -102,6 +149,7 @@ cms.document({
       label: "Title",
       type: "text",
     },
+    BLOGLIST_FIELD,
     {
       name: "content",
       label: "Content",
@@ -125,6 +173,7 @@ cms.document({
       label: "Title",
       type: "text",
     },
+    BLOGLIST_FIELD,
     {
       name: "content",
       label: "Content",

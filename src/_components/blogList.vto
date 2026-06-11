@@ -1,17 +1,33 @@
+{{#
+blogList:
+  filter: layout=layouts/blog-single.vto
+  order: date=desc
+  limit: 0
+  showAuthor: true
+  showDate: true
+  showMins: false
+#}}
+
 <ul class="blog-list">
   {{
-    for single of search.pages("layout=layouts/blog-single.vto", "date=desc")
+    for 
+    single of search.pages(
+      filter ?? "layout=layouts/blog-single.vto",
+      order ?? "date=desc",
+      (limit === 0 ? undefined : limit) ?? undefined,
+    )
+
   }}
     <li>
       <a href="{{ single.url}}">
         <h3>{{ single.title }}</h3>
         <span class="desc">
-          {{ if single.author }}
+          {{ if (showAuthor ?? true) && single.author }}
             <span class="author">
               by <span class="name">{{ single.author }}</span>
             </span>
           {{ /if }}
-          {{ if single.published }}
+          {{ if (showDate ?? true) && single.published }}
             <span class="date">
               <time datetime='{{ single.published |> date("yyyy-MM-dd")}}'>
                 {{ single.published |> date("PPP") }}
@@ -19,7 +35,7 @@
             </span>
           {{ /if }}
           {{ set mins = single.readingInfo?.minutes || 0 }}
-          {{ if mins >= 1 }}
+          {{ if (showMins ?? false) && mins >= 1 }}
             <span class="readTime">
               <span class="mins">{{ mins }}</span> min read
             </span>

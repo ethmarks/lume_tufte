@@ -2,4 +2,4 @@
 layout: layouts/base.vto
 ---
 
-{{ content }}
+{{ content |> replaceAll("/BLOGLIST/", await comp.blogList({ ...blogList })) }}

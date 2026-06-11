@@ -2,6 +2,4 @@
 layout: layouts/base.vto
 ---
 
-{{ content }}
-
-<section>{{ comp.blogList() }}</section>
+{{ content |> replaceAll("/BLOGLIST/", await comp.blogList({ ...blogList })) }}
