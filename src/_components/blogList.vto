@@ -1,0 +1,31 @@
+<ul class="blog-list">
+  {{
+    for single of search.pages("layout=layouts/blog-single.vto", "date=desc")
+  }}
+    <li>
+      <a href="{{ single.url}}">
+        <h3>{{ single.title }}</h3>
+        <span class="desc">
+          {{ if single.author }}
+            <span class="author">
+              by <span class="name">{{ single.author }}</span>
+            </span>
+          {{ /if }}
+          {{ if single.published }}
+            <span class="date">
+              <time datetime='{{ single.published |> date("yyyy-MM-dd")}}'>
+                {{ single.published |> date("PPP") }}
+              </time>
+            </span>
+          {{ /if }}
+          {{ set mins = single.readingInfo?.minutes || 0 }}
+          {{ if mins >= 1 }}
+            <span class="readTime">
+              <span class="mins">{{ mins }}</span> min read
+            </span>
+          {{ /if }}
+        </span>
+      </a>
+    </li>
+  {{ /for }}
+</ul>
