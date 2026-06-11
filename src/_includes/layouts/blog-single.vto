@@ -1,37 +1,24 @@
 ---
 layout: layouts/base.vto
-css: |
-  .subtitle span + span::before {
-    content: "⬥";
-    margin-inline: 4px;
-  }
-
-  #author .name {
-    font-weight: bold;
-  }
-
-  #readTime .mins {
-    font-family: et-book-num, et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-  }
 ---
 
 <h1>{{ title }}</h1>
-<p class="subtitle">
+<p class="subtitle single-desc">
   {{ if author }}
-    <span id="author">
+    <span class="author">
       by <span class="name">{{ author }}</span>
     </span>
   {{ /if }}
-  {{ if date }}
-    <span id="date">
-      <time datetime='{{ date |> date("yyyy-MM-dd")}}'>
-        {{ date |> date("PPP") }}
+  {{ if published }}
+    <span class="date">
+      <time datetime='{{ published |> date("yyyy-MM-dd")}}'>
+        {{ published |> date("PPP") }}
       </time>
     </span>
   {{ /if }}
   {{ set mins = readingInfo?.minutes || 0 }}
   {{ if mins >= 1 }}
-    <span id="readTime">
+    <span class="readTime">
       <span class="mins">{{ mins }}</span> min read
     </span>
   {{ /if }}

@@ -1,0 +1,10 @@
+.single-desc {
+    span + span::before {
+        content: "⬥";
+        margin-inline: 4px;
+    }
+
+    .readTime .mins {
+        font-family: var(--font-num);
+    }
+}

@@ -2,6 +2,18 @@
 Adapted from https://github.com/edwardtufte/tufte-css
 */
 
+:root {
+    --section-width: 55%;
+
+    --font-serif:
+        et-book, Palatino, "Palatino Linotype", "Palatino LT STD",
+        "Book Antiqua", Georgia, serif;
+    --font-num:
+        et-book-num, et-book, Palatino, "Palatino Linotype", "Palatino LT STD",
+        "Book Antiqua", Georgia, serif;
+    --font-mono: Consolas, "Liberation Mono", Menlo, Courier, monospac;
+}
+
 html {
     font-size: 15px;
 }
@@ -11,9 +23,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-left: 12.5%;
-    font-family:
-        et-book, Palatino, "Palatino Linotype", "Palatino LT STD",
-        "Book Antiqua", Georgia, serif;
+    font-family: var(--font-serif);
+
     background-color: #151515;
     color: #ddd;
     max-width: 1400px;
@@ -58,7 +69,7 @@ h3 {
 hr {
     display: block;
     height: 1px;
-    width: 55%;
+    width: var(--section-width);
     border: 0;
     border-top: 1px solid #ccc;
     margin: 1em 0;
@@ -75,7 +86,7 @@ p.subtitle {
 }
 
 .numeral {
-    font-family: et-book-num;
+    font-family: var(--font-num);
 }
 
 .danger {
@@ -135,28 +146,28 @@ blockquote {
 }
 
 blockquote p {
-    width: 55%;
+    width: var(--section-width);
     margin-right: 40px;
 }
 
 blockquote footer {
-    width: 55%;
+    width: var(--section-width);
     font-size: 1.1rem;
     text-align: right;
 }
 
 section > p,
 section > footer,
-section > table {
-    width: 55%;
+section > table,
+section > pre {
+    width: var(--section-width);
 }
 
-/* 50 + 5 == 55, to be the same width as paragraph */
 section > dl,
 section > ol,
 section > ul {
-    width: 50%;
-    -webkit-padding-start: 5%;
+    padding-left: 5%;
+    width: calc(--section-width - 5%);
 }
 
 dt:not(:first-child),
@@ -170,7 +181,7 @@ figure {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    max-width: 55%;
+    max-width: var(--section-width);
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     margin: 0 0 3em 0;
@@ -224,7 +235,7 @@ img {
 
 .sidenote-number:after,
 .sidenote:before {
-    font-family: et-book-num;
+    font-family: var(--font-num);
     position: relative;
     vertical-align: baseline;
 }
@@ -266,7 +277,7 @@ div.table-wrapper {
 
 code,
 pre > code {
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-family: var(--font-mono);
     font-size: 1rem;
     line-height: 1.42;
     -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
@@ -285,14 +296,6 @@ h3 > code {
 .marginnote > code,
 .sidenote > code {
     font-size: 1rem;
-}
-
-pre > code {
-    font-size: 0.9rem;
-    width: 52.5%;
-    margin-left: 2.5%;
-    overflow-x: auto;
-    display: block;
 }
 
 pre.fullwidth > code {
@@ -337,7 +340,11 @@ label.margin-toggle:not(.sidenote-number) {
     height: 100%;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1200px) {
+    :root {
+        --section-width: 100%;
+    }
+
     body {
         width: 84%;
         padding-left: 8%;

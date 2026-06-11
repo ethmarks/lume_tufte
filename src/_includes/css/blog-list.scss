@@ -1,0 +1,56 @@
+ul.blog-list {
+    width: var(--section-width);
+    margin-top: 0;
+    padding-left: 0;
+
+    li {
+        list-style: none;
+        border-block: 1px solid #ddd;
+        margin-top: -1px;
+        padding: 0;
+
+        a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            row-gap: 1rem;
+            padding: 0.2rem;
+
+            text-decoration: none;
+
+            @media (max-width: 760px) {
+                flex-direction: column;
+                align-items: normal;
+                row-gap: 0;
+            }
+
+            &:hover h3 {
+                text-decoration: underline;
+            }
+
+            h3 {
+                margin: 0;
+                font-style: normal;
+                font-size: 1.9rem;
+            }
+
+            .desc {
+                font-style: italic;
+                font-size: 1.3rem;
+
+                span {
+                    white-space: nowrap;
+
+                    &:not(:last-child)::after {
+                        content: "⬥";
+                        margin-inline: 4px;
+                    }
+                }
+
+                .readTime .mins {
+                    font-family: var(--font-num);
+                }
+            }
+        }
+    }
+}

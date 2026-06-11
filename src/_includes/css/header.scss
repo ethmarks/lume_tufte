@@ -1,5 +1,5 @@
 header {
-    width: 55%;
+    width: var(--section-width);
     margin-top: 1rem;
     position: relative;
 
@@ -40,11 +40,5 @@ header {
         &:hover a.active:not(:hover) {
             text-underline-offset: 2.1px;
         }
-    }
-}
-
-@media (max-width: 760px) {
-    header {
-        width: 100%;
     }
 }
