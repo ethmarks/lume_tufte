@@ -50,6 +50,9 @@ export const defaults: Options = {
       tufteSectionsPlugin,
       tufteNotesPlugin,
     ],
+    options: {
+      typographer: true,
+    },
   },
   nueglow: {
     css: "file",
