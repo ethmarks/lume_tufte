@@ -93,8 +93,11 @@ export default function tufteNotesPlugin(md: MarkdownIt) {
     const meta = tokens[idx].meta;
     const { id, isMarginNote, content } = meta;
 
+    // Create or clone the environment object to communicate down-funnel
+    const nestedEnv = { ...env, tufte_nested: true };
+
     // Render internal markdown styling (like bold, links, italics)
-    const renderedContent = md.renderInline(content, env);
+    const renderedContent = md.renderInline(content, nestedEnv);
 
     if (isMarginNote) {
       // Margin note: Label only shows on mobile (via :not(.sidenote-number) CSS rule)

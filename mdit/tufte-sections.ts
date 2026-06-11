@@ -6,6 +6,12 @@ import type MarkdownIt from "npm:markdown-it@14.2.0";
 
 export default function tufteSectionsPlugin(md: MarkdownIt): void {
   md.core.ruler.push("tufte_sections", (state) => {
+    // Skip executing if we are inside a nested/inline render call
+    // (e.g., md.renderInline() called by the tufteNotesPlugin)
+    if (state.env?.tufte_nested) {
+      return;
+    }
+
     const tokens = [];
     let inSection = false;
     let inH1 = false;
@@ -89,7 +95,6 @@ export default function tufteSectionsPlugin(md: MarkdownIt): void {
       }
 
       // 4. Handle <h2>: Close current section (if any) and open a new one
-      // Notice we do NOT strip the ID from the <h2> token like the old plugin did.
       if (token.type === "heading_open" && token.tag === "h2") {
         if (inSection) {
           tokens.push(closeSection());
@@ -100,7 +105,7 @@ export default function tufteSectionsPlugin(md: MarkdownIt): void {
         continue;
       }
 
-      // 5. If we hit general content (like the intro) and aren't in a section, open one
+      // 5. If we hit general content and aren't in a section, open one
       if (!inSection) {
         tokens.push(openSection());
         inSection = true;
