@@ -1,0 +1,22 @@
+details {
+    margin-block: 0.5rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 0.5rem;
+    padding: 0.3rem 1rem;
+
+    summary {
+        user-select: none;
+    }
+}
+
+/*
+details[open] > *:not(summary) {
+    animation: details-show 150ms ease-in-out;
+}
+@keyframes details-show {
+    from {
+        opacity: 0;
+        transform: var(--details-translate, translateY(-0.5em));
+    }
+}
+*/
