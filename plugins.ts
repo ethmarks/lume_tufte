@@ -25,6 +25,7 @@ import {
 import anchorPlugin from "npm:markdown-it-anchor@^9.2.0";
 import collapsiblePlugin from "npm:markdown-it-collapsible@^2.0.2";
 import tufteSectionsPlugin from "./mdit/tufte-sections.ts";
+import tufteNotesPlugin from "./mdit/tufte-notes.ts";
 
 import { merge } from "lume/core/utils/object.ts";
 
@@ -47,6 +48,7 @@ export const defaults: Options = {
       anchorPlugin,
       collapsiblePlugin,
       tufteSectionsPlugin,
+      tufteNotesPlugin,
     ],
   },
   nueglow: {
