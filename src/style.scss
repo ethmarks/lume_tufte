@@ -9,3 +9,9 @@
 .katex-display {
     overflow-x: scroll;
 }
+
+@media (max-width: 1200px) {
+    [glow] {
+        --glow-padding: 0.5em;
+    }
+}

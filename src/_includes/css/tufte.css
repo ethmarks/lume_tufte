@@ -98,16 +98,20 @@ article {
 }
 
 /*
-5rem by default, minus 1rem for the header's top padding and minus 1.7rem for
-the header font size.
+    5rem by default, minus 1rem for the header's top padding and minus 1.7rem
+    for the header font size.
 */
 header + article {
     padding-top: calc(5rem - 1rem - 1.7rem);
 }
 
 section {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-block: 1rem;
+}
+
+/* Fix for figcaptions causing text flow */
+figcaption > section {
+    padding: 0;
 }
 
 p,
@@ -295,7 +299,7 @@ div.table-wrapper {
 
 pre {
     overflow-x: scroll;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 code {
@@ -303,7 +307,9 @@ code {
 }
 
 p > code,
-p > a > code {
+p > a > code,
+li > code,
+li > a > code {
     font-size: 1.2rem;
     background: #0d0d0d;
     padding: 0.2rem 0.3rem;
@@ -378,9 +384,8 @@ label.margin-toggle:not(.sidenote-number) {
     }
 
     body {
-        width: 84%;
-        padding-left: 8%;
-        padding-right: 8%;
+        width: 94%;
+        padding-inline: 3%;
     }
 
     hr,
@@ -401,10 +406,6 @@ label.margin-toggle:not(.sidenote-number) {
     section > ol,
     section > ul {
         width: 90%;
-    }
-
-    figure {
-        max-width: 90%;
     }
 
     figcaption,
