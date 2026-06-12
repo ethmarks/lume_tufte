@@ -141,7 +141,8 @@ div.epigraph > blockquote {
 }
 
 div.epigraph > blockquote,
-div.epigraph > blockquote > p {
+div.epigraph > blockquote > p,
+blockquote > .epigraph {
     font-style: italic;
 }
 
@@ -164,7 +165,8 @@ blockquote p {
     margin-right: 40px;
 }
 
-blockquote footer {
+blockquote footer,
+.quotecite {
     width: var(--section-width);
     font-size: 1.1rem;
     text-align: right;
@@ -340,7 +342,8 @@ pre.fullwidth > code {
     width: 90%;
 }
 
-.fullwidth {
+.fullwidth,
+.fullwidth + figure {
     max-width: 90%;
     clear: both;
 }
@@ -420,7 +423,8 @@ label.margin-toggle:not(.sidenote-number) {
     }
 
     blockquote p,
-    blockquote footer {
+    blockquote footer,
+    .quotecite {
         width: 100%;
     }
 
