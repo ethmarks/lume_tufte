@@ -1,7 +1,7 @@
 {{#
 blogList:
   filter: layout=layouts/blog-single.vto
-  order: date=desc
+  order: date
   limit: 0
   showAuthor: true
   showDate: true
@@ -13,7 +13,7 @@ blogList:
     for 
     single of search.pages(
       filter ?? "layout=layouts/blog-single.vto",
-      order ?? "date=desc",
+      order ?? "date",
       (limit === 0 ? undefined : limit) ?? undefined,
     )
 

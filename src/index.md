@@ -3,7 +3,7 @@ title: Tufte
 layout: layouts/home.vto
 blogList:
   filter: layout=layouts/blog-single.vto
-  order: date=desc
+  order: date
   limit: 5
   showAuthor: true
   showDate: true
