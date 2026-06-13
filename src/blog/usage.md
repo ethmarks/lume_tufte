@@ -1,6 +1,6 @@
 ---
 title: Using this theme
-published: 2026-06-10
+date: 2026-06-10
 author: Ethan Marks
 ---
 

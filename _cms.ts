@@ -1,5 +1,9 @@
 import CMS from "lume/cms/mod.ts";
 
+// For suggesting locale fields.
+import localeCodes from "npm:locale-codes@^1.3.1";
+const allLangCodes = localeCodes.all.map((l) => l.tag);
+
 const cms = CMS();
 
 const BLOGLIST_FIELD: Lume.CMS.Field = {
@@ -56,9 +60,20 @@ cms.document({
   fields: [
     {
       name: "lang",
+      label: "Language",
       type: "text",
       description:
-        'The language code representing the language of the site. For example, "en" represents English. See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang">this MDN page</a> for more information.',
+        'The locale code representing the language of the site. For example, "en" represents English. See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang">this MDN page</a> for more information.',
+      options: allLangCodes,
+    },
+
+    {
+      name: "dateLocale",
+      label: "Date Locale",
+      type: "text",
+      description:
+        'The locale used for displaying dates. For example, the date "2014-09-15" will be displayed as "Sep 15, 2014" using "en-US", but it will be displayed as "15 Sep 2014" using "en-GB". See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal/PlainDate/toLocaleString#locales">this MDN page</a> for more information.',
+      options: allLangCodes,
     },
     {
       name: "metas",
@@ -70,12 +85,12 @@ cms.document({
         {
           name: "site",
           type: "text",
-          description: "The name of the site,",
+          description: "The name of the site.",
         },
         {
           name: "twitter",
           type: "text",
-          description: "The twitter username,",
+          description: "The twitter username.",
         },
         {
           name: "fediverse",
@@ -199,9 +214,9 @@ cms.collection("blog", "src:blog/*.md", [
     label: "Author",
   },
   {
-    name: "published",
+    name: "date",
     type: "date",
-    label: "Publish Date",
+    label: "Publication Date",
   },
   {
     name: "content",

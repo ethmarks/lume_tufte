@@ -9,11 +9,9 @@ layout: layouts/base.vto
       by <span class="name">{{ author }}</span>
     </span>
   {{ /if }}
-  {{ if published }}
+  {{ if date }}
     <span class="date">
-      <time datetime='{{ published |> date("yyyy-MM-dd")}}'>
-        {{ published |> date("PPP") }}
-      </time>
+      {{ comp.dateDisplay({ date }) }}
     </span>
   {{ /if }}
   {{ set mins = readingInfo?.minutes || 0 }}

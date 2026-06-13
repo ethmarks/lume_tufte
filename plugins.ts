@@ -1,7 +1,6 @@
 import sass from "lume/plugins/sass.ts";
 import basePath from "lume/plugins/base_path.ts";
 import metas from "lume/plugins/metas.ts";
-import date from "lume/plugins/date.ts";
 import readingInfo from "lume/plugins/reading_info.ts";
 import search from "lume/plugins/search.ts";
 import {
@@ -82,7 +81,6 @@ export default function (userOptions?: Options) {
     site.use(sass());
     site.use(basePath());
     site.use(metas());
-    site.use(date());
     site.use(readingInfo());
     site.use(search());
     site.use(sitemap(options.sitemap));

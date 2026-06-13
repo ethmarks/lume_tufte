@@ -1,0 +1,13 @@
+{{
+  set getPlainDate = (date) => Temporal.PlainDate.from(date.toISOString().split("T")[0])
+}}
+
+<time datetime="{{ getPlainDate(date).toString() }}">
+  {{
+    getPlainDate(date).toLocaleString(dateLocale, {
+      year: "numeric",
+      day: "numeric",
+      month: "short",
+    })
+  }}
+</time>

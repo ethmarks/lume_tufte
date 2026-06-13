@@ -1,6 +1,6 @@
 ---
 title: Formatting Demo
-published: 2026-06-11
+date: 2026-06-11
 author: Ethan Marks
 ---
 

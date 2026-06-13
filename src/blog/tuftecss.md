@@ -1,6 +1,6 @@
 ---
 title: Tufte CSS
-published: 2014-09-15
+date: 2014-09-15
 author: Dave Liepmann
 ---
 

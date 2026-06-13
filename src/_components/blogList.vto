@@ -1,7 +1,7 @@
 {{#
 blogList:
   filter: layout=layouts/blog-single.vto
-  order: date
+  order: date=desc
   limit: 0
   showAuthor: true
   showDate: true
@@ -27,11 +27,9 @@ blogList:
               by <span class="name">{{ single.author }}</span>
             </span>
           {{ /if }}
-          {{ if (showDate ?? true) && single.published }}
+          {{ if (showDate ?? true) && single.date }}
             <span class="date">
-              <time datetime='{{ single.published |> date("yyyy-MM-dd")}}'>
-                {{ single.published |> date("PPP") }}
-              </time>
+              {{ comp.dateDisplay({ date: single.date }) }}
             </span>
           {{ /if }}
           {{ set mins = single.readingInfo?.minutes || 0 }}
