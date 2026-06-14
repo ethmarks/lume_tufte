@@ -117,6 +117,29 @@ the preview may or may not reflect your changes as you make them, which is not
 only very cool, but also very helpful for seeing how your text will _actually_
 look on your site without having to constantly switch tabs.
 
+### Other Pages
+
+Lastly, let's modify the content of the other pages.
+
+1. **Home Page**: This is the landing page of your site. You can change its
+   Markdown content to make it say whatever you want. Maybe describe what your
+   site is about. If you use the keyword `/BLOGLIST/` anywhere in the content,
+   Tufte will replace it with the blog list component. You can customize the
+   blog list using the Blog List settings.
+2. **About Page**: This is a page at the `/about` URL. You can set its content
+   to whatever you want. The default is an About Me page written from the
+   anthropomorphized theme's perspective because I thought it was funny, but
+   you'll obviously want to change it.
+3. **Blog Index**: This is the page that lists the other blog posts. It has the
+   same `/BLOGLIST/` keyword as the home page. You can change its content to
+   describe what you write about.
+4. **404 Page**: This is the page that displays if the user tries to visit a URL
+   that doesn't exist. You don't need to change this unless you really want to,
+   in which case go right ahead.
+
+Remember that if you want to disable either the blog index or the about page,
+you can just remove them from the header.
+
 ## Syntax
 
 Tufte expands Lume's default Markdown syntax in a few ways. It's all completely
