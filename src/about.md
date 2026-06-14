@@ -1,8 +1,6 @@
 ---
 title: About Me
 layout: layouts/base.vto
-metas:
-  type: profile
 ---
 
 # About Me

@@ -236,6 +236,29 @@ cms.collection(
 );
 
 cms.document({
+  name: "About Page",
+  description: "About page",
+  store: "src:about.md",
+  fields: [
+    {
+      name: "layout",
+      type: "hidden",
+      value: "layouts/base.vto",
+    },
+    {
+      name: "title",
+      label: "Title",
+      type: "text",
+    },
+    {
+      name: "content",
+      label: "Content",
+      type: "markdown",
+    },
+  ],
+});
+
+cms.document({
   name: "404 Page",
   description: "404 not found page",
   store: "src:404.md",
