@@ -225,6 +225,34 @@ cms.collection("blog", "src:blog/*.md", [
   },
 ]);
 
+cms.document({
+  name: "404 Page",
+  description: "404 not found page",
+  store: "src:404.md",
+  fields: [
+    {
+      name: "layout",
+      type: "hidden",
+      value: "layouts/base.vto",
+    },
+    {
+      name: "url",
+      type: "hidden",
+      value: "/404.html",
+    },
+    {
+      name: "title",
+      label: "Title",
+      type: "text",
+    },
+    {
+      name: "content",
+      label: "Content",
+      type: "markdown",
+    },
+  ],
+});
+
 cms.upload("uploads: Uploaded files", "src:uploads");
 
 export default cms;
