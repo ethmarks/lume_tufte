@@ -410,6 +410,21 @@ included plugins:
 - [KaTeX](https://lume.land/plugins/katex/)
 - [Nueglow](https://github.com/ethmarks/lume_nueglow)
 
+## Deployment
+
+Once you're ready to publish your site, you can deploy it just like any other
+Lume site. The
+[official Lume deployment guide](https://lume.land/docs/advanced/deployment/) is
+a fantastic resource that provides explanations for 13 different hosting
+services.
+
+Personally, I suggest using the native static hosting service of your Git
+provider (e.g. GitHub Pages if you're using GitHub). If you're not using Git for
+whatever reason, I'd suggest using [Netlify Drop](https://app.netlify.com/drop).
+You just build your site on your computer, drag-and-drop the output `_site/`
+folder onto the Netlify Drop website, and it'll upload it and host it on the web
+for you.
+
 ## Conclusion
 
 I hope this post was helpful! If you have any other questions, feel free to
