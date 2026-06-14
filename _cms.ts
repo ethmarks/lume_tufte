@@ -204,33 +204,36 @@ cms.document({
   ],
 });
 
-cms.collection("blog", "src:blog/*.md", [
+cms.collection(
   {
-    name: "layout",
-    type: "hidden",
-    value: "layouts/blog-single.vto",
+    name: "blog",
+    label: "Blog Posts",
+    description: "Your site's blog posts",
+    store: "src:blog/*.md",
+    fields: [
+      {
+        name: "title",
+        label: "Title",
+        type: "text",
+      },
+      {
+        name: "author",
+        type: "text",
+        label: "Author",
+      },
+      {
+        name: "date",
+        type: "date",
+        label: "Publication Date",
+      },
+      {
+        name: "content",
+        label: "Content",
+        type: "markdown",
+      },
+    ],
   },
-  {
-    name: "title",
-    label: "Title",
-    type: "text",
-  },
-  {
-    name: "author",
-    type: "text",
-    label: "Author",
-  },
-  {
-    name: "date",
-    type: "date",
-    label: "Publication Date",
-  },
-  {
-    name: "content",
-    label: "Content",
-    type: "markdown",
-  },
-]);
+);
 
 cms.document({
   name: "404 Page",

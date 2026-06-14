@@ -186,7 +186,7 @@ section > dl,
 section > ol,
 section > ul {
     padding-left: 5%;
-    width: calc(--section-width - 5%);
+    width: calc(var(--section-width) - 5%);
 }
 
 dt:not(:first-child),
@@ -312,10 +312,13 @@ p > code,
 p > a > code,
 li > code,
 li > a > code {
-    font-size: 1.2rem;
+    font-size: 1rem;
+
+    /*
     background: #0d0d0d;
     padding: 0.2rem 0.3rem;
     border-radius: 0.5rem;
+    */
 }
 
 [glow] ins::before,
