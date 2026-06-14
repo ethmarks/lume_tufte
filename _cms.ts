@@ -4,7 +4,14 @@ import CMS from "lume/cms/mod.ts";
 import localeCodes from "npm:locale-codes@^1.3.1";
 const allLangCodes = localeCodes.all.map((l) => l.tag);
 
-const cms = CMS();
+const cms = CMS({
+  site: {
+    name: "Lume Tufte CMS",
+    description: "My Lume site built with Tufte theme",
+    body:
+      '<p>Welcome to Lume Tufte!</p><p>See the <a href="https://ethmarks.github.io/lume_tufte/blog/usage#lume-cms">Tufte theme CMS guide</a> for more information on how to use Lume CMS with this theme.</p>',
+  },
+});
 
 const BLOGLIST_FIELD: Lume.CMS.Field = {
   name: "blogList",
