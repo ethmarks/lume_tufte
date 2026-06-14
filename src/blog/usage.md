@@ -143,8 +143,8 @@ you can just remove them from the header.
 ## Syntax
 
 Tufte expands Lume's default Markdown syntax in a few ways. It's all completely
-optional and normal CommonMark syntax still works perfectly, but allow you to
-write more expressively.
+optional and normal CommonMark syntax still works perfectly, but the new syntax
+allows you to write more expressively.
 
 ### Sidenotes
 
@@ -231,10 +231,12 @@ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 ### Figcaptions
 
 To add `<figcaption>` tags to an image, Tufte includes
-[markdown-it-smart-media](https://github.com/ethmarks/markdown-it-smart-media).
-It expands Markdown image syntax to do all sorts of things, such as
-automatically creating `<audio>` and `<video>` tags and automatically embedding
-YouTube iframes. But it also adds support for the little-known
+[markdown-it-smart-media](https://jsr.io/@ethmarks/markdown-it-smart-media)[^Which,
+by the way,
+[was made by me](https://github.com/ethmarks/markdown-it-smart-media)!]. It
+expands Markdown image syntax to do all sorts of things, such as automatically
+creating `<audio>` and `<video>` tags and automatically embedding YouTube
+iframes. But it also adds support for the little-known
 [image title syntax](https://www.markdownlang.com/basic/images.html#images-with-title)
 to output to `<figcaption>` tags.
 
@@ -304,9 +306,11 @@ funding for Babbage's experiments. Yes,
 
 ### Code
 
-Tufte highlights code blocks using [Nueglow](https://nuejs.org/docs/nueglow).
-Nueglow has [its own special syntax](https://nuejs.org/docs/syntax-highlighting)
-for highlighting specific sequences and lines.
+Tufte highlights code blocks using [Nueglow](https://nuejs.org/docs/nueglow)[^By
+the way, the Lume Nueglow plugin that Tufte uses
+[was made by me](https://github.com/ethmarks/lume_nueglow)!]. Nueglow has
+[its own special syntax](https://nuejs.org/docs/syntax-highlighting) for
+highlighting specific sequences and lines.
 
 To highlight a section, surround it with single bullet markers (e.g.
 `•important•`). To underline a section, surround it with double bullet markers
@@ -350,6 +354,10 @@ function greet(•user: User•): string {
 +const me: User = { id: 1, name: "Ethan" };
 console.log(••greet{me}••);
 ```
+
+Note that Nueglow uses heuristics rather than grammars, which means that it
+isn't always 100% accurate, but it supports every programming language out of
+the box, even ones that it's never seen before or that you just made up.
 
 ### Collapsibles
 

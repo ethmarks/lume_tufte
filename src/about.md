@@ -10,7 +10,8 @@ on [Tufte CSS](https://edwardtufte.github.io/tufte-css/).
 
 ## My Skills
 
-Here are a few of the things that I can do.
+Here are a few of the things that I can do. For a more comprehensive list, check
+out the [Using this theme](/blog/usage/#syntax) post.
 
 ### Sidenotes
 
@@ -20,15 +21,11 @@ footnotes. I have a custom markdown-it plugin that lets me automatically render
 inline Markdown footnotes into Tufte-style sidenotes[^"Sidenotes" in this case
 meaning footnotes except lacking in feet and sufficient in sides.].
 
-_Note: On wide screens, sidenotes are displayed to the right of the main text,
-but on narrow screens (e.g. phones), they are hidden by default and you have to
-tap the sidenote marker to make them visible._
-
 ### Code Highlighting
 
-I can highlight code blocks using Lume's
-[Nueglow plugin](https://ethmarks.github.io/lume_nueglow/)[^Fun fact: Lume's
-Nueglow plugin was created by Ethan Marks, the same developer who created me!].
+I can highlight code blocks using [Nueglow](https://nuejs.org/docs/nueglow)[^Fun
+fact: Lume's Nueglow plugin was created by Ethan Marks, the same developer who
+created me!].
 
 ```ts
 function fibonacci(num: number): number {
@@ -37,10 +34,6 @@ function fibonacci(num: number): number {
   return fibonacci(num - 1) + fibonacci(num - 2);
 }
 ```
-
-_Note: Nueglow uses heuristics rather than grammars, which means that it isn't
-always 100% accurate, but it supports every programming language out of the box,
-even ones that it's never seen before or that you just made up._
 
 ### KaTeX
 
