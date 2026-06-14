@@ -1,6 +1,6 @@
 ---
 title: Using this theme
-date: 2026-06-10
+date: 2026-06-14
 author: Ethan Marks
 ---
 
@@ -207,7 +207,7 @@ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 
 ### Figcaptions
 
-To add `<figcaption>` tags to an image, you can use
+To add `<figcaption>` tags to an image, Tufte includes
 [markdown-it-smart-media](https://github.com/ethmarks/markdown-it-smart-media).
 It expands Markdown image syntax to do all sorts of things, such as
 automatically creating `<audio>` and `<video>` tags and automatically embedding
@@ -223,23 +223,38 @@ You just need to add your caption in quotes after the source. For example:
 
 ![Alt text](/uploads/seattle.jpg "A photo I took of Seattle from the Space Needle")
 
+### Fullwidth
+
+On wide screens, the main content only occupies 55% of the screen width, which
+leaves room for sidenotes and prevents eye strain from reading super-wide blocks
+of text.
+
+If you need extra space, add the `.fullwidth` class using the markdown-it-attrs
+syntax. For example:
+
+<!-- deno-fmt-ignore -->
+```md
+![A photo I took of the Rock of Ages quarry in Vermont](/uploads/quarry.jpg) {.fullwidth}
+```
+
+![A photo I took of the Rock of Ages quarry in Vermont](/uploads/quarry.jpg)
+{.fullwidth}
+
 ### Epigraphs
 
 Tufte CSS has a bunch of styles for the `.epigraph`
 class[^<https://github.com/edwardtufte/tufte-css/blob/gh-pages/tufte.css#L144-L166>]
 that adds specific margins and italicizations. It requires a very specific
 structure involving `<div>` and `<footer>` tags that can't be easily created in
-Markdown without a hefty custom markdown-it plugin that I don't really want to
+Markdown without a complex custom markdown-it plugin that I don't really want to
 make[^If you, dear reader, feel up to the task, feel absolutely free to open a
-PR!]. So instead I just modified the CSS to work with a more normal
-`<blockquote>` structure and some custom classes. It's not quite the same and
-the margins are a bit off, but it's close enough and I don't know who uses
-epigraphs anyways.
+PR!]. So instead I just modified the CSS to work with a standard `<blockquote>`
+structure and some custom classes. It's not quite the same and the margins are a
+bit off, but it's close enough and I don't know who uses epigraphs anyways.
 
 To use epigraphs, add the `.epigraph` class to a blockquote using the
-markdown-it-attrs syntax we used for the subtitles, then add the `.quotecite`
-class to the very next bit of text. You can also add an emdash to the quotecite
-if you want.
+markdown-it-attrs syntax, then add the `.quotecite` class to the very next bit
+of text. You can also add an emdash to the quotecite if you want.
 
 Here's an example using my favorite quote from Charles Babbage:[^A close
 contender is when Babbage compared Benjamin Disraeli (who would later become the
@@ -262,13 +277,13 @@ funding for Babbage's experiments. Yes,
 > come out?' I am not able rightly to apprehend the kind of confusion of ideas
 > that could provoke such a question. {.epigraph}
 
-— Charles Babbage (inventor of the calculator), 1864 {.quotecite}
+— Charles Babbage (inventor of the automatic calculator), 1864 {.quotecite}
 
 ### Code
 
 Tufte highlights code blocks using [Nueglow](https://nuejs.org/docs/nueglow).
-Nueglow has [its own special syntax](nuejs.org/docs/syntax-highlighting) for
-highlighting specific sequences and lines.
+Nueglow has [its own special syntax](https://nuejs.org/docs/syntax-highlighting)
+for highlighting specific sequences and lines.
 
 To highlight a section, surround it with single bullet markers (e.g.
 `•important•`). To underline a section, surround it with double bullet markers
@@ -313,6 +328,29 @@ function greet(•user: User•): string {
 console.log(••greet{me}••);
 ```
 
+### Collapsibles
+
+Tufte includes the
+[markdown-it-collapsible](https://npmjs.com/package/markdown-it-collapsible)
+plugin to provide syntax for `<details>` tags.
+
+It's very similar to the code block syntax, except you use plus signs instead of
+backticks. Here's an example.
+
+```md
++++This is the summary
+
+This is the collapsible content. You can put anything you want in here.
+
++++
+```
+
++++This is the summary
+
+This is the collapsible content. You can put anything you want in here.
+
++++
+
 ## Configuring Plugins
 
 Configuring Tufte's included plugins is not possible from the CMS. You'll have
@@ -348,3 +386,13 @@ included plugins:
 - [Markdown](https://lume.land/plugins/markdown/)
 - [KaTeX](https://lume.land/plugins/katex/)
 - [Nueglow](https://github.com/ethmarks/lume_nueglow)
+
+## Conclusion
+
+I hope this post was helpful! If you have any other questions, feel free to
+[open an issue](https://github.com/ethmarks/lume_tufte/issues/new) and I'll get
+back to you.
+
+I hope you enjoy using the Tufte theme!
+
+~Ethan
