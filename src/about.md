@@ -20,7 +20,7 @@ Tufte CSS recommends the use of
 [sidenotes](https://edwardtufte.github.io/tufte-css/#sidenotes) rather than
 footnotes. I have a custom markdown-it plugin that lets me automatically render
 inline Markdown footnotes into Tufte-style sidenotes[^"Sidenotes" in this case
-meaning footnotes except lacking in feet and sufficient in side.].
+meaning footnotes except lacking in feet and sufficient in sides.].
 
 _Note: On wide screens, sidenotes are displayed to the right of the main text,
 but on narrow screens (e.g. phones), they are hidden by default and you have to

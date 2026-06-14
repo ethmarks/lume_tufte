@@ -56,7 +56,7 @@ but you should only need to change a few of them.
    and will autocomplete as you type them.
 2. **Site Name**: You'll want to change the site name from "Lume site" to
    something else. If your site is a personal website, maybe set it to your full
-   name (e.g. "Ethan Marks").
+   name.
 3. **Favicon**: The default favicon is a capital T[^T is for **T**ufte!] in the
    colors and font that TufteCSS uses[^Which I extracted directly from the
    [font SVG files](https://github.com/edwardtufte/et-book/blob/gh-pages/et-book/et-book-roman-line-figures/et-book-roman-line-figures.svg).],
@@ -85,8 +85,8 @@ want to delete them, which you can do by opening each one, clicking the button
 next to "Save changes" that looks like three dots in a vertical line, and
 clicking "Delete".
 
-Now you'll want to create a post of your own. Click "Create new" from the[]
-(staBlog Posts page.
+Now you'll want to create a post of your own. Click "Create new" from the Blog
+Posts page.
 
 1. **Filename**: Choose a filename for your page. This is where the post will be
    physically stored in your project, but more importantly it'll determine the
@@ -107,15 +107,211 @@ Now you'll want to create a post of your own. Click "Create new" from the[]
    getting used to, but it's very easy to learn. Lume uses markdown-it, which is
    fully CommonMark compliant, but Tufte adds several plugins (some of which are
    custom) which add a bit of extra syntax for things like math blocks,
-   sidenotes, collapsibles, and more. See the [Syntax Section](#syntax) for more
+   sidenotes, collapsibles, and more. See the [Syntax section](#syntax) for more
    information.
 
 You might notice that Lume CMS displays a preview of the page you're editing in
 the left half of the screen. Depending on how you're running the CMS[^It _will_
-work on localhost or on a VPS, but not on Deno Deploy or similar.], the preview
-may or may not reflect your changes as you make them, which is not only very
-cool, but also very helpful for seeing how your text will _actually_ look on
-your site without having to constantly switch tabs.
+work on localhost or on a VPS, but it will _not_ on Deno Deploy or similar.],
+the preview may or may not reflect your changes as you make them, which is not
+only very cool, but also very helpful for seeing how your text will _actually_
+look on your site without having to constantly switch tabs.
+
+## Syntax
+
+Tufte expands Lume's default Markdown syntax in a few ways. It's all completely
+optional and normal CommonMark syntax still works perfectly, but allow you to
+write more expressively.
+
+### Sidenotes
+
+If you only learn one of Tufte's syntax features, sidenotes are the one to
+learn. They're useful for citing sources, providing extra information, or
+humorous effect.
+
+They use a similar syntax to
+[GFM's footnotes](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#footnotes),
+but the sidenote text is inline and you don't need to specify the number. Here's
+an example:
+
+```md
+This is my[^"my", in this case, referring to me.] paragraph text.
+```
+
+This is my[^"my", in this case, referring to me.] paragraph text.
+
+Note that on wide screens, sidenotes are displayed to the right of the main
+text, but on narrow screens (e.g. phones), they are hidden by default and you
+have to tap the sidenote marker to make them visible.
+
+### Margin notes
+
+Margin notes are sidenotes' weird siblings. They are exactly like sidenotes in
+every way, except they don't have numbers. I don't really like them, but Edward
+Tufte does and maybe you do too.
+
+They use the exact same syntax as sidenotes, but you add an asterisk after the
+caret. For example:
+
+<!-- deno-fmt-ignore -->
+```md
+I am the very model of a modern major general.[^*No idea why I picked this as the example.]
+```
+
+I am the very model of a modern major general.[^*No idea why I picked this as
+the example.]
+
+### Subtitles
+
+TufteCSS has a rule for the `.subtitle`
+class[^<https://github.com/edwardtufte/tufte-css/blob/gh-pages/tufte.css#L103-L110>]
+that make the text italic and have a large font size. Here it is:
+
+```css
+p.subtitle {
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  display: block;
+  line-height: 1;
+}
+```
+
+You can add the subtitle class to a paragraph directly in Markdown using
+[markdown-it-attrs](https://github.com/arve0/markdown-it-attrs). For example:
+
+```md
+Written by A Bunch of Bees {.subtitle}
+```
+
+Written by A Bunch of Bees {.subtitle}
+
+### Math
+
+Tufte comes with Lume's [KaTeX plugin](https://lume.land/plugins/katex/), which
+allows you to render math in TeX syntax.
+
+The plugin hijacks the `math` code language, so all you have to do is use the
+triple-backtick syntax and put TeX math inside. For example:
+
+````md
+```math
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+```
+````
+
+```math
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+```
+
+### Figcaptions
+
+To add `<figcaption>` tags to an image, you can use
+[markdown-it-smart-media](https://github.com/ethmarks/markdown-it-smart-media).
+It expands Markdown image syntax to do all sorts of things, such as
+automatically creating `<audio>` and `<video>` tags and automatically embedding
+YouTube iframes. But it also adds support for the little-known
+[image title syntax](https://www.markdownlang.com/basic/images.html#images-with-title)
+to output to `<figcaption>` tags.
+
+You just need to add your caption in quotes after the source. For example:
+
+```md
+![Alt text](/uploads/seattle.jpg "A photo I took of Seattle from the Space Needle")
+```
+
+![Alt text](/uploads/seattle.jpg "A photo I took of Seattle from the Space Needle")
+
+### Epigraphs
+
+Tufte CSS has a bunch of styles for the `.epigraph`
+class[^<https://github.com/edwardtufte/tufte-css/blob/gh-pages/tufte.css#L144-L166>]
+that adds specific margins and italicizations. It requires a very specific
+structure involving `<div>` and `<footer>` tags that can't be easily created in
+Markdown without a hefty custom markdown-it plugin that I don't really want to
+make[^If you, dear reader, feel up to the task, feel absolutely free to open a
+PR!]. So instead I just modified the CSS to work with a more normal
+`<blockquote>` structure and some custom classes. It's not quite the same and
+the margins are a bit off, but it's close enough and I don't know who uses
+epigraphs anyways.
+
+To use epigraphs, add the `.epigraph` class to a blockquote using the
+markdown-it-attrs syntax we used for the subtitles, then add the `.quotecite`
+class to the very next bit of text. You can also add an emdash to the quotecite
+if you want.
+
+Here's an example using my favorite quote from Charles Babbage:[^A close
+contender is when Babbage compared Benjamin Disraeli (who would later become the
+Prime Minister) to Herostratus (the ancient Greek arsonist who burned down one
+of the Seven Wonders of the Ancient World) because he refused to approve more
+funding for Babbage's experiments. Yes,
+[really](https://www.gutenberg.org/cache/epub/57532/pg57532-images.html#:~:text=The%20Herostratus%20of%20Science%2C%20if%20he%20escape%20oblivion%2C%20will%20be%20linked%20with%20the%20destroyer%20of%20the%20Ephesian%20Temple.).]
+
+```md
+> On two occasions I have been asked by members of Parliament, 'Pray, Mr.
+> Babbage, if you put into the machine wrong figures, will the right answers
+> come out?' I am not able rightly to apprehend the kind of confusion of ideas
+> that could provoke such a question. {.epigraph}
+
+— Charles Babbage (inventor of the automatic calculator), 1864 {.quotecite}
+```
+
+> On two occasions I have been asked by members of Parliament, 'Pray, Mr.
+> Babbage, if you put into the machine wrong figures, will the right answers
+> come out?' I am not able rightly to apprehend the kind of confusion of ideas
+> that could provoke such a question. {.epigraph}
+
+— Charles Babbage (inventor of the calculator), 1864 {.quotecite}
+
+### Code
+
+Tufte highlights code blocks using [Nueglow](https://nuejs.org/docs/nueglow).
+Nueglow has [its own special syntax](nuejs.org/docs/syntax-highlighting) for
+highlighting specific sequences and lines.
+
+To highlight a section, surround it with single bullet markers (e.g.
+`•important•`). To underline a section, surround it with double bullet markers
+(e.g. `••mistake••`). To highlight an entire line, begin it with a greater than
+sign (`>`). To render a diff, use plus signs (`+`) and minus signs (`-`) to
+start inserted and deleted lines, respectively.
+
+Here's an example that uses all four. Because I'm using Nueglow to highlight the
+example code block, I can't use the actual bullet marker character, so I'm going
+to use a lozenge (`⬥`) instead. Just remember that they're supposed to be bullet
+markers (`•`).
+
+````md
+```ts
+interface User {
+  id: number;
+  name: string;
+}
+
+function greet(⬥user: User⬥): string {
+> return `Hello, ${user.name}!`;
+}
+
+-const me: User = { id: 1, name: "Not Ethan" };
++const me: User = { id: 1, name: "Ethan" };
+console.log(⬥⬥greet{me}⬥⬥);
+```
+````
+
+```ts
+interface User {
+  id: number;
+  name: string;
+}
+
+function greet(•user: User•): string {
+> return `Hello, ${user.name}!`;
+}
+
+-const me: User = { id: 1, name: "Not Ethan" };
++const me: User = { id: 1, name: "Ethan" };
+console.log(••greet{me}••);
+```
 
 ## Configuring Plugins
 
@@ -143,10 +339,6 @@ const site = lume();
 
 export default site;
 ```
-
-_By the way, the diff highlighting that you see above is a native feature of
-this theme thanks to the Nueglow plugin (also made by me). Read more
-[here](https://ethmarks.github.io/lume_nueglow/#:~:text=If%20you%20prefix%20a%20line%20with%20a%20minus%20sign,the%20diff%20below.)._
 
 For a complete list of plugin options, consult the documentation for each of the
 included plugins:
