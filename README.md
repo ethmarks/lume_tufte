@@ -8,3 +8,15 @@ General-purpose [Lume theme](https://lume.land/themes/) based on
 [Tufte CSS](https://edwardtufte.github.io/tufte-css/).
 
 ![Screenshot of "Using this theme" post](./.github/usage-2026-06-14.png)
+
+## Quickstart
+
+Prerequisite: make sure to
+[install Deno](https://docs.deno.com/runtime/getting_started/installation/) if
+you haven't already.
+
+```sh
+git clone https://github.com/ethmarks/lume_tufte.git
+cd lume_tufte
+deno task serve
+```
