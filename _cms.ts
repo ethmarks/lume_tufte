@@ -122,6 +122,7 @@ cms.document({
           description: "The icon of the site.",
         },
         "lang: hidden",
+        "description: hidden",
       ],
     },
     {
@@ -162,13 +163,13 @@ cms.document({
   store: "src:index.md",
   fields: [
     {
-      name: "layout",
-      type: "hidden",
-      value: "layouts/home.vto",
-    },
-    {
       name: "title",
       label: "Title",
+      type: "text",
+    },
+    {
+      name: "description",
+      label: "Description",
       type: "text",
     },
     BLOGLIST_FIELD,
@@ -177,6 +178,7 @@ cms.document({
       label: "Content",
       type: "markdown",
     },
+    "layout: hidden",
   ],
 });
 
@@ -186,13 +188,13 @@ cms.document({
   store: "src:blog.md",
   fields: [
     {
-      name: "layout",
-      type: "hidden",
-      value: "layouts/blog-index.vto",
-    },
-    {
       name: "title",
       label: "Title",
+      type: "text",
+    },
+    {
+      name: "description",
+      label: "Description",
       type: "text",
     },
     BLOGLIST_FIELD,
@@ -201,6 +203,7 @@ cms.document({
       label: "Content",
       type: "markdown",
     },
+    "layout: hidden",
   ],
 });
 
@@ -214,6 +217,11 @@ cms.collection(
       {
         name: "title",
         label: "Title",
+        type: "text",
+      },
+      {
+        name: "description",
+        label: "Description",
         type: "text",
       },
       {
@@ -241,13 +249,13 @@ cms.document({
   store: "src:about.md",
   fields: [
     {
-      name: "layout",
-      type: "hidden",
-      value: "layouts/base.vto",
-    },
-    {
       name: "title",
       label: "Title",
+      type: "text",
+    },
+    {
+      name: "description",
+      label: "Description",
       type: "text",
     },
     {
@@ -255,6 +263,8 @@ cms.document({
       label: "Content",
       type: "markdown",
     },
+
+    "layout: hidden",
   ],
 });
 
@@ -264,18 +274,13 @@ cms.document({
   store: "src:404.md",
   fields: [
     {
-      name: "layout",
-      type: "hidden",
-      value: "layouts/base.vto",
-    },
-    {
-      name: "url",
-      type: "hidden",
-      value: "/404.html",
-    },
-    {
       name: "title",
       label: "Title",
+      type: "text",
+    },
+    {
+      name: "description",
+      label: "Description",
       type: "text",
     },
     {
@@ -283,6 +288,8 @@ cms.document({
       label: "Content",
       type: "markdown",
     },
+    "url: hidden",
+    "layout: hidden",
   ],
 });
 

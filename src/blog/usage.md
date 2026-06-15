@@ -1,5 +1,6 @@
 ---
 title: Using this theme
+description: A comprehensive guide on how to install, manage via Lume CMS, configure, and deploy a Lume website using the Markdown-enhanced Tufte theme.
 date: 2026-06-14
 author: Ethan Marks
 ---
@@ -96,10 +97,13 @@ Posts page.
    other URL-unsafe characters. Also, you'll need to end the filename with
    `.md`, or else Lume won't process it correctly. The final filename should be
    something like `mypost.md`.
-2. **Metadata**: Set the title, author, and publication date of your post. The
-   title can be whatever you want, but it is mandatory. The author and
-   publication date fields are optional though recommended. If you don't provide
-   them, they just won't be displayed.
+2. **Metadata**: Set the title, description, author, and publication date of
+   your post. The title can be whatever you want, but it is mandatory. The
+   description, author, and publication date fields are optional though
+   recommended. If you don't provide the author or date, they just won't be
+   displayed in the subtitle. If you don't provide a description, it won't be
+   put in your site's meta tag, which can be bad for SEO if that's something you
+   care about for your site.
 3. **Content**: Now for the fun part. Or not, depending on how you feel about
    writing. You'll be writing the post content in
    [Markdown](https://www.markdownguide.org/). If you've used Markdown before,

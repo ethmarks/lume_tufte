@@ -1,5 +1,6 @@
 ---
 title: Blog
+description: My blog posts
 layout: layouts/blog-index.vto
 blogList:
   filter: layout=layouts/blog-single.vto

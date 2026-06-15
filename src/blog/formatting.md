@@ -1,5 +1,6 @@
 ---
 title: Formatting Demo
+description: A formatting demonstration for the Tufte theme, showcasing its ability to render elements like code blocks, math blocks, and captioned images.
 date: 2026-06-11
 author: Ethan Marks
 ---

@@ -1,5 +1,6 @@
 ---
 title: Tufte CSS
+description: "Edward Tufte uses a distinctive style in his handouts: simple, with well-set typography, extensive sidenotes, and tight integration of graphics and charts. tufte-css brings that style to HTML documents."
 date: 2014-09-15
 author: Dave Liepmann
 ---

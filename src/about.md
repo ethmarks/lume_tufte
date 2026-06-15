@@ -1,5 +1,6 @@
 ---
 title: About Me
+description: I am a general-purpose Lume theme based on Tufte CSS.
 layout: layouts/base.vto
 ---
 

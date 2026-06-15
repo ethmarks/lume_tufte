@@ -3,6 +3,7 @@ dateLocale: en-GB
 
 metas:
   site: Lume site
+  description: "=description"
   twitter: ""
   fediverse: ""
   generator: true

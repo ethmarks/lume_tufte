@@ -1,5 +1,6 @@
 ---
 title: Tufte
+description: A general-purpose Lume theme based on Tufte CSS.
 layout: layouts/home.vto
 blogList:
   filter: layout=layouts/blog-single.vto
