@@ -70,7 +70,8 @@ export const defaults: Options = {
   },
   smartMedia: {
     enabled: true,
-    imageAttrs: "image-size class='responsive'",
+    imageAttrs:
+      'image-size loading="lazy" decoding="async" fetchpriority="auto" class="responsive"',
   },
   katex: {
     cssFile: "/katex.css",
