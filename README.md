@@ -54,8 +54,9 @@ bracket.
 
 Example:
 
+<!-- deno-fmt-ignore -->
 ```md
-This is my[^"my", in this case, referring to me.] paragraph text.
+I am the very model of a modern major general.[^*No idea why I picked this as the example.]
 ```
 
 Result:
@@ -219,3 +220,25 @@ This is the collapsible content. You can put anything you want in here.
 Result (shown in collapsed form and in expanded form):
 
 ![Collapsible demo](./.github/img/collapsible.png)
+
+## Acknowledgements
+
+- Thanks to [David Liepmann](https://github.com/daveliepmann) and
+  [Edward Tufte](https://github.com/edwardtufte) for making
+  [tufte.css](https://github.com/edwardtufte/tufte-css).
+- Thanks to [Óscar Otero](https://github.com/oscarotero) for making the
+  incredible SSG [Lume](https://lume.land/) and for making 9 of the 13 external
+  plugins that the Tufte theme uses.
+- Thanks to the respective authors of
+  [markdown-it-anchor](https://www.npmjs.com/package/markdown-it-anchor) and
+  [markdown-it-collapsible](https://www.npmjs.com/package/markdown-it-collapsible).
+
+Everything else, including two of the external plugins
+([lume_nueglow](https://github.com/ethmarks/lume_nueglow) and
+[markdown-it-smart-media](https://jsr.io/@ethmarks/markdown-it-smart-media)) and
+both of the internal plugins, was made by me.
+
+## License
+
+This project is under an MIT License. See [LICENSE](LICENSE) for more
+information.
