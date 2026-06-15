@@ -24,13 +24,17 @@ General-purpose [Lume theme](https://lume.land/themes/) based on
 - **LumeCMS Integration**: Features a comprehensive `_cms.ts` file that allows
   for no-code content management of the entire site using
   [LumeCMS](https://lume.land/cms/).
+- **Perfect Lighthouse Scores**: Earns
+  [perfect 100s](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring#:~:text=To%20provide%20a%20good%20user,90%20to%2094.)
+  in performance, accessibility, best practices, and SEO on
+  [Lighthouse](https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fethmarks.github.io%2Flume_tufte%2F).
 
 ## Quickstart
 
 > [!TIP]
-> This quickstart is for creating your own Lume site using the Tufte theme. If
+> **This quickstart is for creating your own Lume site using the Tufte theme. If
 > you just want to check out the theme, visit the
-> [live demo](https://ethmarks.github.io/lume_tufte/).
+> [live demo](https://ethmarks.github.io/lume_tufte/).**
 
 Prerequisite: make sure to
 [install Deno](https://docs.deno.com/runtime/getting_started/installation/) if
@@ -58,9 +62,8 @@ bracket.
 
 Example:
 
-<!-- deno-fmt-ignore -->
 ```md
-I am the very model of a modern major general.[^*No idea why I picked this as the example.]
+This is my[^"my", in this case, referring to me.] paragraph text.
 ```
 
 Result:
@@ -74,8 +77,9 @@ with an asterisk after the caret.
 
 Example:
 
+<!-- deno-fmt-ignore -->
 ```md
-This is my[^"my", in this case, referring to me.] paragraph text.
+I am the very model of a modern major general.[^*No idea why I picked this as the example.]
 ```
 
 Result:
