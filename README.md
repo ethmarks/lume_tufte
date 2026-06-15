@@ -18,10 +18,8 @@ General-purpose [Lume theme](https://lume.land/themes/) based on
   [Edward Tufte](https://github.com/edwardtufte). Its wide margins and beautiful
   serif typography create a clean, sophisticated aesthetic.
 - **Expressive Syntax**: Includes several plugins that extend standard Markdown
-  syntax to allow for automatically rendering Tufte-style sidenotes, complex
-  math blocks, highlighted code blocks, `<figcaption>` tags, `<details>` tags,
-  and more, all without writing a single line of HTML. Includes two completely
-  custom `markdown-it` plugins for perfect Tufte CSS compatibility. See the
+  syntax for things like sidenotes, complex math blocks, `<figcaption>` tags,
+  and more, all without writing a single line of HTML. See the
   [Syntax section](#syntax) for more information.
 - **LumeCMS Integration**: Features a comprehensive `_cms.ts` file that allows
   for no-code content management of the entire site using
@@ -29,9 +27,15 @@ General-purpose [Lume theme](https://lume.land/themes/) based on
 
 ## Quickstart
 
+> [!TIP]
+> This quickstart is for creating your own Lume site using the Tufte theme. If
+> you just want to check out the theme, visit the
+> [live demo](https://ethmarks.github.io/lume_tufte/).
+
 Prerequisite: make sure to
 [install Deno](https://docs.deno.com/runtime/getting_started/installation/) if
-you haven't already.
+you haven't already. I'm using Deno 2.8.1, but it'll probably work on other
+versions.
 
 ```sh
 git clone https://github.com/ethmarks/lume_tufte.git
@@ -236,7 +240,8 @@ Result (shown in collapsed form and in expanded form):
 Everything else, including two of the external plugins
 ([lume_nueglow](https://github.com/ethmarks/lume_nueglow) and
 [markdown-it-smart-media](https://jsr.io/@ethmarks/markdown-it-smart-media)) and
-both of the internal plugins, was made by me.
+both of the internal mdit plugins ([tufte-notes](./mdit/tufte-notes.ts) and
+[tufte-sections](./mdit/tufte-sections.ts)), was made by me.
 
 ## License
 
