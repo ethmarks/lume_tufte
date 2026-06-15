@@ -213,7 +213,9 @@ Written by A Bunch of Bees {.subtitle}
 ### Math
 
 Tufte comes with Lume's [KaTeX plugin](https://lume.land/plugins/katex/), which
-allows you to render math in TeX syntax.
+allows you to render math in TeX syntax. I recommend reading KaTeX's
+[supported functions](https://katex.org/docs/supported) page to learn the syntax
+if you don't already know it.
 
 The plugin hijacks the `math` code language, so all you have to do is use the
 triple-backtick syntax and put TeX math inside. For example:
