@@ -3,6 +3,7 @@ import basePath from "lume/plugins/base_path.ts";
 import metas from "lume/plugins/metas.ts";
 import readingInfo from "lume/plugins/reading_info.ts";
 import search from "lume/plugins/search.ts";
+import imageSize from "lume/plugins/image_size.ts";
 import {
   type Options as SitemapOptions,
   sitemap,
@@ -69,6 +70,7 @@ export const defaults: Options = {
   },
   smartMedia: {
     enabled: true,
+    imageAttrs: "image-size class='responsive'",
   },
   katex: {
     cssFile: "/katex.css",
@@ -97,6 +99,7 @@ export default function (userOptions?: Options) {
     site.use(katex(options.katex));
     site.use(markdown(options.markdown));
     site.use(sass());
+    site.use(imageSize());
     site.use(basePath());
     site.use(metas());
     site.use(readingInfo());

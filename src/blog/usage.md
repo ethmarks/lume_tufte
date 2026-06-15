@@ -34,7 +34,7 @@ deno task serve
 
 You should see a page that looks something like this:
 
-![Screenshot of Lume CMS with the items 'Blog Posts', 'Site settings', 'Homepage', 'Blog Index', '404 Page', and "uploads"](/uploads/cms-2026-06-13.png)
+![Screenshot of Lume CMS with the items 'Blog Posts', 'Site settings', 'Homepage', 'Blog Index', '404 Page', and 'uploads'](/uploads/cms-2026-06-13.png)
 
 Feel free to explore the CMS. It's pretty intuitive to use, and I've added
 explanatory comments to almost every setting. If you prefer a more guided
