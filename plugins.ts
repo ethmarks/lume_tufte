@@ -27,7 +27,7 @@ import collapsiblePlugin from "npm:markdown-it-collapsible@^2.0.2";
 import {
   type MarkdownItSmartMediaOptions,
   smartMediaPlugin,
-} from "jsr:@ethmarks/markdown-it-smart-media@^1.2.0";
+} from "jsr:@ethmarks/markdown-it-smart-media@^1.2.1";
 import tufteSectionsPlugin from "./mdit/tufte-sections.ts";
 import tufteNotesPlugin from "./mdit/tufte-notes.ts";
 
