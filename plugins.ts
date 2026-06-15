@@ -23,7 +23,10 @@ import {
 } from "lume/plugins/markdown.ts";
 import anchorPlugin from "npm:markdown-it-anchor@^9.2.0";
 import collapsiblePlugin from "npm:markdown-it-collapsible@^2.0.2";
-import { smartMediaPlugin } from "jsr:@ethmarks/markdown-it-smart-media@^1.2.0";
+import {
+  type MarkdownItSmartMediaOptions,
+  smartMediaPlugin,
+} from "jsr:@ethmarks/markdown-it-smart-media@^1.2.0";
 import tufteSectionsPlugin from "./mdit/tufte-sections.ts";
 import tufteNotesPlugin from "./mdit/tufte-notes.ts";
 
@@ -31,12 +34,17 @@ import { merge } from "lume/core/utils/object.ts";
 
 import "lume/types.ts";
 
+interface SmartMediaOptions extends MarkdownItSmartMediaOptions {
+  enabled: boolean;
+}
+
 export interface Options {
   sitemap?: Partial<SitemapOptions>;
   favicon?: Partial<FaviconOptions>;
   markdown?: Partial<MarkdownOptions>;
   katex?: Partial<KatexOptions>;
   nueglow?: Partial<NueglowOptions>;
+  smartMedia?: Partial<SmartMediaOptions>;
 }
 
 export const defaults: Options = {
@@ -47,7 +55,6 @@ export const defaults: Options = {
     plugins: [
       anchorPlugin,
       collapsiblePlugin,
-      smartMediaPlugin,
       tufteSectionsPlugin,
       tufteNotesPlugin,
     ],
@@ -59,6 +66,9 @@ export const defaults: Options = {
     css: "file",
     numbered: true,
     theme: "onedark",
+  },
+  smartMedia: {
+    enabled: true,
   },
   katex: {
     cssFile: "/katex.css",
@@ -76,8 +86,16 @@ export default function (userOptions?: Options) {
     site.add("assets/fonts");
     site.add("uploads");
 
+    // Markdown Plugins
+    if (options.markdown.plugins && options.smartMedia.enabled) {
+      // deno-lint-ignore no-unused-vars
+      const { enabled, ...smartMediaOptions } = options.smartMedia;
+      options.markdown.plugins.push([smartMediaPlugin, smartMediaOptions]);
+    }
+
     // Plugins
     site.use(katex(options.katex));
+    site.use(markdown(options.markdown));
     site.use(sass());
     site.use(basePath());
     site.use(metas());
@@ -85,7 +103,6 @@ export default function (userOptions?: Options) {
     site.use(search());
     site.use(sitemap(options.sitemap));
     site.use(favicon(options.favicon));
-    site.use(markdown(options.markdown));
     site.use(nueglow(options.nueglow));
   };
 }
