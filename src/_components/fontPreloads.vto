@@ -1,0 +1,56 @@
+<link
+  rel="preload"
+  href="/assets/fonts/et-book.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+>
+
+{{#
+Heuristic for the presence of any selectors that set `font-style: italic;`
+#}}
+{{
+  if 
+  ["<header>", "<em>", "<h2>", "<h3>", "subtitle", "epigraph"].some((s) =>
+    content.includes(s)
+  )
+
+}}
+  <link
+    rel="preload"
+    href="/assets/fonts/et-book-italic.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+{{ /if }}
+
+{{#
+Heuristic for the presence of any selectors that set `font-weight: bold;`
+#}}
+{{ if content.includes("<strong>") }}
+  <link
+    rel="preload"
+    href="/assets/fonts/et-book-bold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+{{ /if }}
+
+{{#
+Heuristic for the presence of any selectors that use font-num
+#}}
+{{
+  if 
+  ["sidenote-number", "blog-list", "numeral"].some((s) => content.includes(s))
+
+}}
+  <link
+    rel="preload"
+    href="/assets/fonts/et-book-num.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+{{ /if }}
