@@ -1,0 +1,34 @@
+@mixin dark {
+    --bg-color: #151515;
+    --text-color: #ddd;
+    --hr-color: #ccc;
+    --header-border-color: #ddd;
+    --details-border-color: #dbdbdb;
+    --bloglist-border-color: #ddd;
+}
+
+@mixin light {
+    --bg-color: #fffff8;
+    --text-color: #111;
+    --hr-color: #222;
+    --header-border-color: #111;
+    --details-border-color: #121212;
+    --bloglist-border-color: #111;
+}
+
+html[data-theme="dark"] {
+    @include dark;
+}
+
+html[data-theme="light"] {
+    @include light;
+}
+
+html[data-theme="both"] {
+    @media (prefers-color-scheme: dark) {
+        @include dark;
+    }
+    @media (prefers-color-scheme: light) {
+        @include light;
+    }
+}

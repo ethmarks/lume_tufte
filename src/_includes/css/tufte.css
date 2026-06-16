@@ -26,21 +26,12 @@ body {
     padding-left: 12.5%;
 
     font-family: var(--font-serif);
-    background-color: #151515;
-    color: #ddd;
+    background-color: var(--bg-color, #151515);
+    color: var(--text-color, #ddd);
 
     scroll-behavior: smooth;
     counter-reset: sidenote-counter;
 }
-
-/*
-@media (prefers-color-scheme: light) {
-    body {
-        background-color: #fffff8;
-        color: #111;
-    }
-}
-*/
 
 h1 {
     font-weight: 400;
@@ -73,7 +64,7 @@ hr {
     height: 1px;
     width: var(--section-width);
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--hr-color, #ccc);
     margin: 1em 0;
     padding: 0;
 }

@@ -82,6 +82,16 @@ cms.document({
         'The locale used for displaying dates. For example, the date "2014-09-15" will be displayed as "Sep 15, 2014" using "en-US", but it will be displayed as "15 Sep 2014" using "en-GB". See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal/PlainDate/toLocaleString#locales">this MDN page</a> for more information.',
       options: allLangCodes,
     },
+
+    {
+      name: "allowedThemes",
+      label: "Theme",
+      description:
+        `The theme for the site styles. "dark" and "light" will force dark mode and light mode, respectively. "both" will use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme">prefers-color-scheme</a> to let the user's browser decide.`,
+      type: "select",
+      options: ["dark", "light", "both"],
+    },
+
     {
       name: "metas",
       label: "Metas",

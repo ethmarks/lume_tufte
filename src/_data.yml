@@ -1,6 +1,16 @@
 lang: en
 dateLocale: en-GB
 
+# Whether to only allow dark mode, only allow light mode, or allow both.
+#
+# If set to both, it relies on prefers-color-scheme to determine which theme to
+# use.
+#
+# Set to dark mode only by default because TufteCSS looks best in dark mode, by
+# a lot. I'm only allowing light mode at all because I want to respect the
+# user's agency.
+allowedThemes: dark
+
 metas:
   site: Lume site
   description: "=description"

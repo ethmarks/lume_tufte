@@ -1,6 +1,6 @@
 details {
     margin-block: 0.5rem;
-    border: 1px solid #dbdbdb;
+    border: 1px solid var(--details-border-color, #dbdbdb);
     border-radius: 0.5rem;
     padding: 0.3rem 1rem;
 

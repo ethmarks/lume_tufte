@@ -14,7 +14,7 @@ header {
         position: absolute;
         bottom: 0;
         width: 100%;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid var(--header-border-color, #ddd);
     }
 
     .title {

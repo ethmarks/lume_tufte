@@ -21,6 +21,8 @@ If you want to use Tufte for your own site, read the
 If you just want to check out what this theme can do, read the
 [Formatting Demo](/blog/formatting) post.
 
+---
+
 ## Recent Posts
 
 /BLOGLIST/
