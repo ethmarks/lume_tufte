@@ -8,6 +8,7 @@ import {
   type Options as SitemapOptions,
   sitemap,
 } from "lume/plugins/sitemap.ts";
+import { feed, type Options as FeedOptions } from "lume/plugins/feed.ts";
 import {
   favicon,
   type Options as FaviconOptions,
@@ -42,6 +43,7 @@ interface SmartMediaOptions extends MarkdownItSmartMediaOptions {
 
 export interface Options {
   sitemap?: Partial<SitemapOptions>;
+  feed?: Partial<FeedOptions>;
   favicon?: Partial<FaviconOptions>;
   markdown?: Partial<MarkdownOptions>;
   katex?: Partial<KatexOptions>;
@@ -50,6 +52,12 @@ export interface Options {
 }
 
 export const defaults: Options = {
+  feed: {
+    query: "layout=layouts/blog-single.vto",
+    info: {
+      title: "=metas.site",
+    },
+  },
   favicon: {
     input: "uploads/favicon.svg",
   },
@@ -101,14 +109,15 @@ export default function (userOptions?: Options) {
     // Plugins
     site.use(katex(options.katex));
     site.use(markdown(options.markdown));
+    site.use(nueglow(options.nueglow));
     site.use(sass());
     site.use(imageSize());
     site.use(basePath());
     site.use(metas());
     site.use(readingInfo());
     site.use(search());
-    site.use(sitemap(options.sitemap));
     site.use(favicon(options.favicon));
-    site.use(nueglow(options.nueglow));
+    site.use(sitemap(options.sitemap));
+    site.use(feed(options.feed));
   };
 }

@@ -25,4 +25,4 @@ If you just want to check out what this theme can do, read the
 
 /BLOGLIST/
 
-_View all posts at [Blog](/blog)._
+View all posts at [Blog](/blog)

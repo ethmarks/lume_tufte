@@ -133,16 +133,21 @@ Lastly, let's modify the content of the other pages.
 
 1. **Home Page**: This is the landing page of your site. You can change its
    Markdown content to make it say whatever you want. Maybe describe what your
-   site is about. If you use the keyword `/BLOGLIST/` anywhere in the content,
-   Tufte will replace it with the blog list component. You can customize the
-   blog list using the Blog List settings.
+   site is about. A few things to note:
+   - If you use the keyword `/BLOGLIST/` anywhere in the content, Tufte will
+     replace it with the blog list component. You can customize the blog list
+     using the Blog List settings.
 2. **About Page**: This is a page at the `/about` URL. You can set its content
    to whatever you want. The default is an About Me page written from the
    anthropomorphized theme's perspective because I thought it was funny, but
    you'll obviously want to change it.
-3. **Blog Index**: This is the page that lists the other blog posts. It has the
-   same `/BLOGLIST/` keyword as the home page. You can change its content to
-   describe what you write about.
+3. **Blog Index**: This is the page that lists the other blog posts. You can
+   change its content to describe what you write about.
+   - The same `/BLOGLIST/` keyword as on the home page is available.
+   - Tufte automatically generates an RSS feed at `/feed.rss` that lists all
+     blog posts in a format that RSS readers can parse. You can link to it on
+     any pages that you want (or in the header, or nowhere at all!), but the
+     blog index is a good place to do so.
 4. **404 Page**: This is the page that displays if the user tries to visit a URL
    that doesn't exist. You don't need to change this unless you really want to,
    in which case go right ahead.

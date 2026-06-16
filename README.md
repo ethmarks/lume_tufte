@@ -253,7 +253,7 @@ Result:
   [Edward Tufte](https://github.com/edwardtufte) for making
   [tufte.css](https://github.com/edwardtufte/tufte-css).
 - Thanks to [Óscar Otero](https://github.com/oscarotero) for making the
-  incredible SSG [Lume](https://lume.land/) and for making 10 of the 15 external
+  incredible SSG [Lume](https://lume.land/) and for making 11 of the 16 external
   plugins that the Tufte theme uses.
 - Thanks to the respective authors of
   [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor),
