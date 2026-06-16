@@ -16,12 +16,11 @@ blogList:
 This is my Lume site using the Tufte theme.
 
 If you want to use Tufte for your own site, read the
-[Using this theme](/blog/usage) post.
+[Using this theme](/blog/usage/) post.
 
 If you just want to check out what this theme can do, read the
-[Formatting Demo](/blog/formatting) post.
-
----
+[Long multiplication shenanigans](/blog/mult/) post, which is an off-topic post
+that not-so-subtly demos the Tufte theme.
 
 ## Recent Posts
 
