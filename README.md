@@ -229,6 +229,24 @@ Result (shown in collapsed form and in expanded form):
 
 ![Collapsible demo](./.github/img/collapsible.png)
 
+### Table of Contents
+
+To add a table of contents, use the syntax from
+[markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right):
+place any of `${toc}`, `[[toc]]`, `[toc]`, or `[[_toc_]]` anywhere on a page and
+the plugin will automatically replace it with a table of contents based on your
+headings.
+
+Example:
+
+```md
+[toc]
+```
+
+Result:
+
+![Table of Contents demo](./.github/img/toc.png)
+
 ## Acknowledgements
 
 - Thanks to [David Liepmann](https://github.com/daveliepmann) and

@@ -24,6 +24,7 @@ import {
 } from "lume/plugins/markdown.ts";
 import anchorPlugin from "npm:markdown-it-anchor@^9.2.0";
 import collapsiblePlugin from "npm:markdown-it-collapsible@^2.0.2";
+import tocPlugin from "npm:markdown-it-toc-done-right@^4.2.0";
 import {
   type MarkdownItSmartMediaOptions,
   smartMediaPlugin,
@@ -56,6 +57,7 @@ export const defaults: Options = {
     plugins: [
       anchorPlugin,
       collapsiblePlugin,
+      tocPlugin,
       tufteSectionsPlugin,
       tufteNotesPlugin,
     ],

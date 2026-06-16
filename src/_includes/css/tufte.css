@@ -20,14 +20,16 @@ html {
 
 body {
     width: 87.5%;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 12.5%;
-    font-family: var(--font-serif);
 
+    font-family: var(--font-serif);
     background-color: #151515;
     color: #ddd;
-    max-width: 1400px;
+
+    scroll-behavior: smooth;
     counter-reset: sidenote-counter;
 }
 

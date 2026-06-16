@@ -8,6 +8,12 @@ author: Ethan Marks
 This post will walk you through how to install this theme, manage it using the
 built-in CMS, and configure its plugins.
 
++++ Table of Contents
+
+[toc]
+
++++
+
 ## Installation
 
 Installing Tufte is as simple as using the Lume init command with the `theme`
@@ -387,6 +393,37 @@ This is the collapsible content. You can put anything you want in here.
 This is the collapsible content. You can put anything you want in here.
 
 +++
+
+### Table of Contents
+
+Tufte includes the
+[markdown-it-toc-done-right](https://npmjs.com/package/markdown-it-toc-done-right)
+plugin to automatically generate tables of contents.
+
+You can use insert any of `${toc}`, `[[toc]]`, `[toc]`, or `[[_toc_]]` into your
+page content and Tufte will automatically replace it with a table of contents
+based on your headings. Here's an example based on this page's headings.
+
+```md
+[toc]
+```
+
+<!-- I unfortunately had to just copy-paste the raw rendered HTML because the
+     toc plugin doesn't seem to work if you put it inside a h2 or try to add
+     more than two per page or something like that. -->
+<!-- deno-fmt-ignore -->
+<nav class="table-of-contents"><ol><li><a href="#installation">Installation</a></li><li><a href="#lume-cms">Lume CMS</a><ol><li><a href="#site-settings">Site settings</a></li><li><a href="#blog-posts">Blog Posts</a></li><li><a href="#other-pages">Other Pages</a></li></ol></li><li><a href="#syntax">Syntax</a><ol><li><a href="#sidenotes">Sidenotes</a></li><li><a href="#margin-notes">Margin notes</a></li><li><a href="#subtitles">Subtitles</a></li><li><a href="#math">Math</a></li><li><a href="#figcaptions">Figcaptions</a></li><li><a href="#fullwidth">Fullwidth</a></li><li><a href="#epigraphs">Epigraphs</a></li><li><a href="#code">Code</a></li><li><a href="#collapsibles">Collapsibles</a></li><li><a href="#table-of-contents">Table of Contents</a></li></ol></li><li><a href="#configuring-plugins">Configuring Plugins</a></li><li><a href="#deployment">Deployment</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+
+I personally like to wrap my tables of contents in a collapsible, as in the
+example below, but you can do whatever you like.
+
+```md
++++ Table of Contents
+
+[toc]
+
++++
+```
 
 ## Configuring Plugins
 
