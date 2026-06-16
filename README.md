@@ -253,11 +253,13 @@ Result:
   [Edward Tufte](https://github.com/edwardtufte) for making
   [tufte.css](https://github.com/edwardtufte/tufte-css).
 - Thanks to [Óscar Otero](https://github.com/oscarotero) for making the
-  incredible SSG [Lume](https://lume.land/) and for making 10 of the 14 external
+  incredible SSG [Lume](https://lume.land/) and for making 10 of the 15 external
   plugins that the Tufte theme uses.
 - Thanks to the respective authors of
-  [markdown-it-anchor](https://www.npmjs.com/package/markdown-it-anchor) and
-  [markdown-it-collapsible](https://www.npmjs.com/package/markdown-it-collapsible).
+  [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor),
+  [markdown-it-collapsible](https://www.npmjs.com/package/markdown-it-collapsible),
+  and
+  [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right).
 
 Everything else, including two of the external plugins
 ([lume_nueglow](https://github.com/ethmarks/lume_nueglow) and
