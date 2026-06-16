@@ -7,7 +7,7 @@
 General-purpose [Lume theme](https://lume.land/themes/) based on
 [Tufte CSS](https://edwardtufte.github.io/tufte-css/).
 
-![Screenshot of "Using this theme" post](./.github/img/usage-2026-06-14.png)
+![Screenshot of Tufte demo homepage](./.github/img/home-2026-06-15.png)
 
 ## Features
 
