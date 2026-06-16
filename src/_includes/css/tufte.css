@@ -223,12 +223,14 @@ a:visited {
 }
 
 /* Sidenotes, margin notes, figures, captions */
-img {
+img,
+video {
     max-width: 100%;
 }
 
 img,
-pre {
+pre,
+video {
     border-radius: 0.5rem;
 }
 
@@ -457,9 +459,5 @@ label.margin-toggle:not(.sidenote-number) {
     div.table-wrapper,
     table {
         width: 85%;
-    }
-
-    img {
-        width: 100%;
     }
 }
