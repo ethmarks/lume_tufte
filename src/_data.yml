@@ -9,7 +9,7 @@ dateLocale: en-GB
 # Set to dark mode only by default because TufteCSS looks best in dark mode, by
 # a lot. I'm only allowing light mode at all because I want to respect the
 # user's agency.
-allowedThemes: dark
+theme: dark
 
 metas:
   site: Lume site

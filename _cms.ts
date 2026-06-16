@@ -84,7 +84,7 @@ cms.document({
     },
 
     {
-      name: "allowedThemes",
+      name: "theme",
       label: "Theme",
       description:
         `The theme for the site styles. "dark" and "light" will force dark mode and light mode, respectively. "both" will use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme">prefers-color-scheme</a> to let the user's browser decide.`,

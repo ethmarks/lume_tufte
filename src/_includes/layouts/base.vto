@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ lang || metas.lang }}" data-theme="{{ allowedThemes }}">
+<html lang="{{ lang || metas.lang }}" data-theme="{{ theme }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,10 @@
       {{ /if }}
       {{ metas.site }}
     </title>
-    <meta name="color-scheme" content="light dark">
+    <meta
+      name="color-scheme"
+      content='{{ theme === "both" ? "light dark" : theme}}'
+    >
 
     {{ comp.fontPreloads({ content }) }}
 
