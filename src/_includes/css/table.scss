@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 1.2rem;
+
+    th,
+    td {
+        padding: 0.7rem 0.85rem;
+        vertical-align: top;
+    }
+
+    th {
+        text-align: left;
+        font-style: italic;
+        border-bottom: 2px solid #3c3c3c;
+    }
+
+    /*
+    // I think that zebra striping in table is really beneficial for
+    // readability, but it doesn't really fit with the Tufte aesthetic, so I've
+    // commented it out. I'm leaving it in for in case I change my mind.
+    tbody tr:nth-child(even) {
+        // light mode color should be #00000030
+        background: var(--table-row-zebra-color, #ffffff08);
+    }
+    */
+
+    &.fullwidth,
+    .fullwidth + & {
+        width: 100%;
+    }
+}
