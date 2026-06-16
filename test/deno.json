@@ -1,7 +1,7 @@
 {
   "imports": {
-    "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.1.0/",
-    "lume/cms/": "https://cdn.jsdelivr.net/gh/lumeland/cms@0.13.0/",
+    "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.2.6/",
+    "lume/cms/": "https://cdn.jsdelivr.net/gh/lumeland/cms@0.15.5/",
     "theme/": "../",
     "lume/jsx-runtime": "https://cdn.jsdelivr.net/gh/oscarotero/ssx@0.1.12/jsx-runtime.ts"
   },
@@ -21,25 +21,16 @@
     }
   },
   "compilerOptions": {
-    "types": [
-      "lume/types.ts"
-    ],
+    "types": ["lume/types.ts"],
     "jsx": "react-jsx",
     "jsxImportSource": "lume"
   },
-  "exclude": [
-    "./_site"
-  ],
-  "unstable": [
-    "temporal",
-    "fmt-component"
-  ],
+  "exclude": ["./_site"],
+  "unstable": ["temporal", "fmt-component"],
   "permissions": {
     "lume": {
       "read": true,
-      "write": [
-        "./"
-      ],
+      "write": ["./"],
       "import": [
         "cdn.jsdelivr.net:443",
         "jsr.io:443",
@@ -60,13 +51,9 @@
     }
   },
   "lint": {
-    "plugins": [
-      "https://cdn.jsdelivr.net/gh/lumeland/lume@3.1.0/lint.ts"
-    ],
+    "plugins": ["https://cdn.jsdelivr.net/gh/lumeland/lume@3.1.0/lint.ts"],
     "rules": {
-      "exclude": [
-        "no-import-prefix"
-      ]
+      "exclude": ["no-import-prefix"]
     }
   }
 }
