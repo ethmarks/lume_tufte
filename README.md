@@ -42,8 +42,7 @@ you haven't already. I'm using Deno 2.8.1, but it'll probably work on other
 versions.
 
 ```sh
-git clone https://github.com/ethmarks/lume_tufte.git
-cd lume_tufte
+deno run -A https://lume.land/init.ts --theme=tufte
 deno task serve
 ```
 
