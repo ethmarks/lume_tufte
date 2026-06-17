@@ -47,6 +47,90 @@ cd lume_tufte
 deno task serve
 ```
 
+## How it Works
+
+Under the hood, the Tufte theme is a Lume plugin that automatically loads a
+bunch of plugins, layouts, components, and stylesheets.
+
+### Remote Files
+
+When you install the Tufte theme, you won't see any of its internal files in
+your site. This is because the theme internals are loaded as
+[remote files](https://lume.land/docs/core/remote-files/) via Lume's
+`site.remote()` API. This keeps your site's repo clean while still making the
+necessary theme files available to Lume.
+
+> [!TIP]
+> Because local files take precedence over remote files, you can override the
+> theme internal files by creating an identically-named file in the same
+> location, if you were so inclined.
+
+### Plugins
+
+Tufte uses 12 Lume plugins and 6 markdown-it plugins to add syntax, optimize
+performance, and handle internal theme logic.
+
+**Syntax plugins**
+
+These plugins add syntax that you can use when writing page content. See the
+[Syntax section](#syntax) for a guide.
+
+- [katex](https://lume.land/plugins/katex/): renders math blocks.
+- [nueglow](https://github.com/ethmarks/lume_nueglow): highlights code blocks.
+- [markdown](https://lume.land/plugins/markdown/): already installed by default,
+  but we need to explicitly add it in order to add our own markdown-it plugins.
+- [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor):
+  adds `id` attributes to headings so that you can use
+  [URI fragments](https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Fragment).
+- [markdown-it-collapsible](https://www.npmjs.com/package/markdown-it-collapsible):
+  adds syntax for collapsibles.
+- [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right):
+  adds syntax for tables of content.
+- [markdown-it-smart-media](https://github.com/ethmarks/markdown-it-smart-media):
+  adds syntax for videos, audio, and figcaptions.
+- [markdown-it-tufte-sections](./mdit/tufte-sections.ts): custom plugin that
+  automatically wraps page content in `<section>` tags based on headings,
+  [as Tufte CSS requires](https://edwardtufte.github.io/tufte-css/#fundamentals--sections-and-headers:~:text=use%20section%20tags%20around%20each%20logical%20grouping%20of%20text%20and%20headings.).
+- [markdown-it-tufte-notes](./mdit/tufte-notes.ts): custom plugin that adds
+  syntax for Tufte-style sidenotes and margin notes.
+
+**Optimization/SEO plugins**
+
+These plugins are used to make pages load faster, improve SEO, or other
+invisible-but-important things. 100s in every category on Lighthouse doesn't
+just _happen_, you know.
+
+- [imageSize](https://lume.land/plugins/image_size/): adds `width` and `height`
+  attributes to images to prevent [layout shifts](https://web.dev/articles/cls)
+  on page load.
+- [sitemap](https://lume.land/plugins/sitemap/): generates the
+  [sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview).
+- [feed](https://lume.land/plugins/feed/): generates the RSS feed.
+- [favicon](https://lume.land/plugins/favicon/): optimizes the favicon and
+  converts it to different formats.
+- Though it's not a plugin, the
+  [`fontPreloads.vto` component](./src/_components/fontPreloads.vto) definitely
+  fits in this category. It selectively preloads _only_ the font files that each
+  page uses. This prevents
+  [FOUT](https://fonts.google.com/knowledge/glossary/fout) without adding unused
+  global preloads.
+
+**Internal plugins**
+
+These plugins are used to make other parts of the theme work.
+
+- [sass](https://lume.land/plugins/sass/): transpiles the SCSS stylesheets into
+  browser-consumable CSS files.
+- [basePath](https://lume.land/plugins/base_path/): prefixes relative URLs (e.g.
+  `/about`) with a subpath, which allows the site to be deployed on services
+  like GitHub Pages.
+- [metas](https://lume.land/plugins/metas/): adds `<meta>` tags to the `<head>`
+  of each page for things like titles, descriptions, and the favicon.
+- [readingInfo](https://lume.land/plugins/reading_info/): counts the words of
+  each page, which is used in the blogList component's post info.
+- [search](https://lume.land/plugins/search/): allows layouts to query and
+  filter pages, which is used in the blogList component to list the posts.
+
 ## Syntax
 
 _A more in-depth guide to the Tufte theme's syntax is available
