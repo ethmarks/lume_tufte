@@ -13,6 +13,7 @@
       name="color-scheme"
       content='{{ theme === "both" ? "light dark" : theme}}'
     >
+    <link rel="canonical" href="{{ url |> url(true) }}">
 
     {{ comp.fontPreloads({ content }) }}
 
@@ -24,7 +25,9 @@
     {{ /if }}
     <link rel="stylesheet" href="/style.css">
 
-    <link rel="canonical" href="{{ url |> url(true) }}">
+    {{ if extraHead }}
+      {{ extraHead }}
+    {{ /if }}
   </head>
   <body>
     <main>
