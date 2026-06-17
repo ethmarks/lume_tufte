@@ -331,6 +331,15 @@ Result:
 
 ![Table of Contents demo](./.github/img/toc.png)
 
+## Showcase
+
+Here are all the sites that I'm aware of that use the Tufte theme. If your site
+uses the Tufte theme and you'd like it to be featured here, feel absolutely free
+to open a PR!
+
+- [Lume Tufte Theme Demo](https://ethmarks.github.io/lume_tufte/) (obviously)
+- [Lume Nueglow Plugin Demo](https://ethmarks.github.io/lume_nueglow/)
+
 ## Acknowledgements
 
 - Thanks to [David Liepmann](https://github.com/daveliepmann) and
